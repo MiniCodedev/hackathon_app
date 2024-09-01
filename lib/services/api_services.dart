@@ -1,6 +1,4 @@
-import 'dart:io';
 import 'dart:typed_data';
-
 import 'package:google_generative_ai/google_generative_ai.dart';
 import 'package:hackathon_app/services/data.dart';
 
@@ -10,7 +8,7 @@ class ApiServices {
   ApiServices() {
     String apiKey = "AIzaSyBCN7k2i4E9L48vtyRR4MBOMyPds3Sc8cQ";
     final model = GenerativeModel(
-      model: 'gemini-1.5-flash',
+      model: 'gemini-1.5-pro',
       apiKey: apiKey,
     );
     this.model = model;
@@ -31,15 +29,15 @@ class ApiServices {
     return data;
   }
 
-  Future<String> apiCallImage(String message) async {
-    String imagePath = "assets/mangobactspot2.jpg";
-    File imageFile = File(imagePath);
+  Future<String> apiCallImage(String message, Uint8List imageBytes) async {
+    final content = [
+      Content.multi([
+        TextPart(message),
+        DataPart('image/png', imageBytes),
+      ])
+    ];
 
-    // Read the file as bytes
-    Uint8List imageBytes = await imageFile.readAsBytes();
-
-    var response = await model.generateContent(
-        [Content.data("Image", imageBytes), Content.text(message)]);
+    final response = await model.generateContent(content);
     return response.text ?? "";
   }
 
@@ -47,21 +45,5 @@ class ApiServices {
     var content = Content.text(userMessage);
     var response = await chat.sendMessage(content);
     return response.text ?? "";
-  }
-
-  Stream<String> apiCallStream(String userMessage) async* {
-    const apiKey = "AIzaSyBCN7k2i4E9L48vtyRR4MBOMyPds3Sc8cQ";
-    final model = GenerativeModel(
-      model: 'gemini-1.5-flash',
-      apiKey: apiKey,
-    );
-
-    final chat = model.startChat(history: [Content.model(getData())]);
-    var content = Content.text(userMessage);
-
-    // Simulate streaming of responses
-    await for (var response in chat.sendMessageStream(content)) {
-      yield response.text ?? "";
-    }
   }
 }

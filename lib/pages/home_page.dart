@@ -17,31 +17,10 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   TextEditingController userTextField = TextEditingController();
   ScrollController scrollController = ScrollController();
-  List<List<String>> message = [];
+  List<List> message = [];
   String usermsg = "";
   bool isfetching = false;
   ApiServices apiServices = ApiServices();
-
-  StreamSubscription<String>? _subscription;
-
-  @override
-  void dispose() {
-    _subscription?.cancel();
-    super.dispose();
-  }
-
-  void chatMessageStream(String usermessage) {
-    _subscription = apiServices.apiCallStream(usermessage).listen((chat) {
-      setState(() {
-        message.add(["GenixAi", chat]);
-        animateToEnd();
-      });
-    }, onDone: () {
-      setState(() {
-        isfetching = false;
-      });
-    });
-  }
 
   void animateToEnd() {
     scrollController.animateTo(
@@ -52,36 +31,43 @@ class _HomePageState extends State<HomePage> {
   }
 
   Future chatMessage(String usermessage) async {
-    String chat = (await apiServices.apiCallsendMessage(usermessage));
-    message.add(["GenixAi", chat]);
+    String chat;
+    if (imageBytes != null) {
+      chat = (await apiServices.apiCallImage(usermessage, imageBytes!));
+    } else {
+      chat = (await apiServices.apiCallsendMessage(usermessage));
+    }
+
+    message.add(["GenixAi", chat, "null"]);
     animateToEnd();
+    imageBytes = null;
     setState(() {
       isfetching = false;
     });
   }
 
   File? _imageFile;
+  bool usingImage = false;
+  Uint8List? imageBytes;
   final ImagePicker _picker = ImagePicker();
 
   Future<void> _pickImage() async {
     final pickedFile = await _picker.pickImage(source: ImageSource.gallery);
 
     if (pickedFile != null) {
-      setState(() {
-        _imageFile = File(pickedFile.path);
-      });
+      _imageFile = File(pickedFile.path);
+      imageBytes = await _imageFile!.readAsBytes();
+      usingImage = true;
+      setState(() {});
     }
-  }
-
-  Future<Uint8List?> _getImageBytes() async {
-    if (_imageFile == null) return null;
-    return await _imageFile!.readAsBytes();
   }
 
   onSubmit(String usermsg) {
     isfetching = true;
-    message.add(["user", usermsg]);
+    message.add(["user", usermsg, imageBytes ?? "null"]);
+    usermsg = "";
     userTextField.clear();
+    usingImage = false;
     setState(() {});
     animateToEnd();
     chatMessage(usermsg);
@@ -106,61 +92,72 @@ class _HomePageState extends State<HomePage> {
                   return MessageTile(
                     name: message[index][0],
                     message: message[index][1],
+                    image:
+                        message[index][2] == "null" ? null : message[index][2],
                   );
                 },
               ),
             ),
           ),
-          Padding(
+          Container(
             padding: const EdgeInsets.all(10),
-            child: TextField(
-              controller: userTextField,
-              onChanged: (value) {
-                usermsg = value;
-              },
-              onSubmitted: isfetching
-                  ? null
-                  : (value) {
-                      usermsg = value;
-                      onSubmit(usermsg);
-                    },
-              decoration: InputDecoration(
-                prefixIcon: const Icon(Icons.message_rounded),
-                suffixIcon: Container(
-                  width: 100,
-                  child: Row(
-                    children: [
-                      IconButton(
-                        onPressed: () async {
-                          await _pickImage();
-                          Uint8List? imageBytes = await _getImageBytes();
-
-                          if (imageBytes != null) {
-                            // Use the image bytes here
-                            print(
-                                "Image size: ${imageBytes.length} bytes" * 100);
-                          }
-                        },
-                        icon: const Icon(Icons.attach_file_rounded),
-                      ),
-                      IconButton(
-                        onPressed: isfetching
-                            ? null
-                            : () {
-                                onSubmit(usermsg);
-                              },
-                        icon: Icon(
-                          Icons.send_rounded,
-                          color: isfetching ? Colors.grey[600] : null,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                !usingImage
+                    ? Container()
+                    : Container(
+                        padding: const EdgeInsets.all(5),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(10),
+                          child: Image.memory(
+                            imageBytes!,
+                            fit: BoxFit.cover,
+                            height: 100,
+                          ),
                         ),
                       ),
-                    ],
+                TextField(
+                  controller: userTextField,
+                  onChanged: (value) {
+                    setState(() {
+                      usermsg = value;
+                    });
+                  },
+                  decoration: InputDecoration(
+                    prefixIcon: const Icon(Icons.message_rounded),
+                    suffixIcon: SizedBox(
+                      width: 100,
+                      child: Row(
+                        children: [
+                          IconButton(
+                            onPressed: () async {
+                              await _pickImage();
+                            },
+                            icon: const Icon(Icons.attach_file_rounded),
+                          ),
+                          IconButton(
+                            onPressed: isfetching
+                                ? null
+                                : usermsg.isEmpty
+                                    ? null
+                                    : () {
+                                        onSubmit(usermsg);
+                                      },
+                            icon: Icon(
+                              Icons.send_rounded,
+                              color: isfetching ? Colors.grey[600] : null,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    hintText: "Message",
+                    border: border,
+                    focusedBorder: focusborder,
                   ),
                 ),
-                hintText: "Message",
-                border: border,
-                focusedBorder: focusborder,
-              ),
+              ],
             ),
           )
         ],
@@ -170,10 +167,12 @@ class _HomePageState extends State<HomePage> {
 }
 
 class MessageTile extends StatefulWidget {
-  const MessageTile({super.key, required this.name, required this.message});
+  const MessageTile(
+      {super.key, required this.name, required this.message, this.image});
 
   final String name;
   final String message;
+  final Uint8List? image;
 
   @override
   State<MessageTile> createState() => _MessageTileState();
@@ -263,6 +262,14 @@ class _MessageTileState extends State<MessageTile> {
                       ),
                     ),
                   ),
+                  widget.image == null
+                      ? Container()
+                      : Padding(
+                          padding: const EdgeInsets.all(10.0),
+                          child: ClipRRect(
+                              borderRadius: BorderRadius.circular(20),
+                              child: Image.memory(widget.image!)),
+                        )
                 ],
               ),
             )
