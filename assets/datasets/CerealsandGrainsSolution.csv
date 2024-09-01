@@ -1,0 +1,56 @@
+Disease,Crop,Solution,Application Method
+Rust,"Wheat, Barley",- Apply fungicides like propiconazole or tebuconazole.,- Spray fungicides and manage crop rotation.
+,,- Use resistant varieties.,
+,,- Practice crop rotation.,
+Powdery Mildew,"Wheat, Barley",- Apply sulfur-based fungicides.,- Spray fungicides and neem oil on affected plants.
+,,- Use neem oil.,
+,,- Improve air circulation.,
+,,- Avoid high humidity.,
+Fusarium Head Blight,"Wheat, Barley",- Apply fungicides like tebuconazole or prothioconazole.,- Spray fungicides and manage field conditions.
+,,- Remove and destroy infected plant parts.,
+,,- Improve field drainage.,
+Leaf Spot,Wheat,- Apply fungicides like chlorothalonil or mancozeb.,- Spray fungicides and remove affected leaves.
+,,- Remove and destroy affected leaves.,
+,,- Improve air circulation.,
+Septoria Leaf Blotch,Wheat,- Apply fungicides like chlorothalonil or tebuconazole.,- Spray fungicides and manage crop rotation.
+,,- Remove and destroy infected leaves.,
+,,- Practice crop rotation.,
+Bacterial Blight,"Rice, Wheat",- Use copper-based bactericides.,- Apply bactericides and improve ventilation.
+,,- Remove and destroy infected plant parts.,
+,,- Improve air circulation.,
+Rice Blast,Rice,- Apply fungicides like tricyclazole.,- Spray fungicides and manage field conditions.
+,,- Use resistant varieties.,
+,,- Improve field drainage.,
+Sheath Blight,Rice,- Apply fungicides like carbendazim or benomyl.,- Spray fungicides and manage field conditions.
+,,- Remove and destroy infected plant parts.,
+,,- Improve air circulation.,
+Brown Spot,Rice,- Apply fungicides like propiconazole.,- Spray fungicides and manage field conditions.
+,,- Remove and destroy infected plant parts.,
+,,- Improve air circulation.,
+Stem Rust,"Barley, Wheat",- Apply fungicides like propiconazole.,- Spray fungicides and manage crop rotation.
+,,- Use resistant varieties.,
+,,- Practice crop rotation.,
+Ergot,"Wheat, Barley",- Remove and destroy infected plants.,- Regularly inspect and remove infected plants.
+,,- Avoid planting in ergot-prone areas.,
+,,- Use resistant varieties.,
+Leaf Blight,"Corn, Barley",- Apply fungicides like chlorothalonil.,- Spray fungicides and remove affected leaves.
+,,- Remove and destroy infected leaves.,
+,,- Improve air circulation.,
+Head Smut,Corn,- Use resistant varieties.,- Use resistant varieties and manage soil health.
+,,- Avoid planting in infected soil.,
+,,- Improve soil drainage.,
+Kernel Smut,Corn,- Apply fungicides like carbendazim.,- Spray fungicides and manage crop rotation.
+,,- Remove and destroy infected ears.,
+,,- Practice crop rotation.,
+Southern Corn Leaf Blight,Corn,- Apply fungicides like propiconazole.,- Spray fungicides and remove affected leaves.
+,,- Remove and destroy infected leaves.,
+,,- Use resistant varieties.,
+Corn Mosaic Virus,Corn,- Use virus-free seeds.,- Remove infected plants and manage vector populations.
+,,- Remove and destroy infected plants.,
+,,- Control insect vectors.,
+Yellow Rust,Wheat,- Apply fungicides like triazole.,- Spray fungicides and manage crop rotation.
+,,- Use resistant varieties.,
+,,- Practice crop rotation.,
+Common Bunt,Wheat,- Use resistant varieties.,- Use resistant varieties and manage soil health.
+,,- Improve soil management.,
+,,- Avoid planting in infected fields.,

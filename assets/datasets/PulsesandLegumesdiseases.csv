@@ -1,0 +1,28 @@
+rop,Disease,Symptoms,Leaf Color,Plant Structure,Spots and Lesions,Wilting and Stunting,Other Symptoms
+Chickpeas,Ascochyta Blight,"Water-soaked lesions, dark spots on leaves; shriveling pods","Dark spots, Yellowing","Leaf lesions, Reduced yield","Dark, water-soaked lesions","Pod shriveling, Reduced growth",Lesions on stems and pods
+,Fusarium Wilt,Yellowing and wilting of leaves; root rot,"Yellowing, Wilting","Root rot, Stunted growth","Root rot, Yellowing","Severe wilting, Reduced growth",Vascular browning in stems
+,Septoria Leaf Spot,"Small, dark, circular spots with yellow halos on leaves",Yellow halos around spots,"Leaf drop, Reduced yield","Dark circular spots, Yellow halos","Leaf drop, Reduced growth",Lesions may coalesce over time
+Pigeon Pea,Pigeon Pea Wilt,Yellowing and wilting of leaves; root rot,"Yellowing, Wilting","Root rot, Stunted growth","Root rot, Yellowing","Severe wilting, Reduced growth",Brown lesions in vascular tissues
+,Alternaria Blight,Dark brown spots with concentric rings on leaves; premature leaf drop,"Brown spots, Yellowing","Leaf drop, Reduced yield",Dark brown spots with rings,"Premature leaf drop, Reduced yield",Lesions often spread rapidly
+,Phytophthora Blight,"Dark, water-soaked lesions on stems and pods; pod rot","Dark lesions, Yellowing","Pod rot, Reduced yield","Water-soaked lesions, Pod rot","Pod rot, Reduced growth",Lesions can spread quickly
+Green Gram,Alternaria Leaf Spot,"Dark, irregular spots with concentric rings on leaves; early leaf drop","Dark spots, Yellow halos","Leaf drop, Reduced yield","Dark, irregular spots","Leaf drop, Stunted growth",Spots with concentric rings
+,Powdery Mildew,"White, powdery fungal growth on leaves and stems",White powdery growth,Powdery fungal growth,White powdery spots,"Stunted growth, Reduced yield",Powdery mildew on leaves and stems
+,Bacterial Blight,Water-soaked lesions on leaves; yellowing and wilting of leaves,Water-soaked lesions,"Leaf lesions, Reduced yield","Water-soaked, dark lesions","Wilting, Reduced growth",Lesions with yellow margins
+Black Gram,Powdery Mildew,"White, powdery fungal growth on leaves and stems",White powdery growth,Powdery fungal growth,White powdery spots,"Stunted growth, Reduced yield",Powdery mildew on leaves and stems
+,Leaf Spot,"Small, dark spots with yellow halos; leaf drop",Yellow halos around spots,"Leaf drop, Reduced yield","Small dark spots, Yellow halos","Leaf drop, Reduced growth",Spots enlarge and merge
+,Root Rot,"Root decay, yellowing of leaves; stunted plant growth","Yellowing, Wilting","Root decay, Stunted growth","Root decay, Yellowing","Severe wilting, Reduced growth",Roots may be blackened or mushy
+Cowpea,Cowpea Mosaic Virus,Mosaic patterns on leaves; stunted growth,Mosaic patterns,"Stunted growth, Reduced yield",Mosaic leaf patterns,"Stunted growth, Reduced yield","Leaf deformation, Reduced pod setting"
+,Powdery Mildew,"White, powdery fungal growth on leaves and stems",White powdery growth,Powdery fungal growth,White powdery spots,"Stunted growth, Reduced yield",Powdery mildew on leaves and stems
+,Root Knot Nematode,Root galls and deformities; yellowing and wilting of leaves,"Yellowing, Wilting","Root galls, Stunted growth",Galls on roots,"Wilting, Reduced growth","Root deformities, Galls on roots"
+Lentil,Ascochyta Blight,Water-soaked lesions with concentric rings on leaves; pod blight,"Dark spots, Yellowing","Leaf lesions, Reduced yield",Dark lesions with concentric rings,"Wilting of leaves, Pod blight",Lesions can spread rapidly
+,Fusarium Wilt,Yellowing and wilting of leaves; root rot,"Yellowing, Wilting","Root rot, Stunted growth","Root rot, Yellowing","Severe wilting, Reduced growth",Vascular browning in stems
+,Rust,Red-brown pustules on leaves; reduces yield,Red-brown pustules,Rust pustules on leaves,"Red-brown pustules, Powdery","Reduced growth, Leaf drop",Pustules appear in clusters
+Peas,Powdery Mildew,"White, powdery fungal growth on leaves and stems",White powdery growth,Powdery fungal growth,White powdery spots,"Stunted growth, Reduced yield",Powdery mildew on leaves and stems
+,Downy Mildew,Yellow patches on leaves with gray mold underneath,Yellow patches,Gray mold on leaves,Gray moldy patches,"Stunted growth, Reduced yield",Moldy appearance on leaves
+,Pea Weevil,Holes in pods; larval feeding damage,Pod damage,Damaged pods,"Holes in pods, Larval feeding",Reduced pod yield,Larval damage in pods
+Soybean,Soybean Rust,Red-brown pustules on leaves; reduces yield,Red-brown pustules,Rust pustules on leaves,"Red-brown pustules, Powdery","Reduced growth, Leaf drop",Pustules become larger and coalesce
+,Aphid Infestation,Distorted leaves; honeydew secretion; sooty mold formation,"Distorted, Sticky",Distorted leaves,"Honeydew secretion, Sooty mold","Stunted growth, Reduced yield",Sooty mold on leaves
+,Brown Spot,"Large, round brown spots with yellow halos; leaf tip dieback","Brown spots, Yellowing","Leaf dieback, Reduced growth","Round brown spots, Yellow halos",Wilting of lower leaves,Brown necrosis at leaf tips
+Lupins,Anthracnose,"Dark, sunken lesions on leaves, stems, and pods; reduced yield",Dark lesions,Sunken lesions on stems,Sunken dark lesions,"Reduced growth, Pod damage",Lesions often coalesce
+,Powdery Mildew,"White, powdery fungal growth on leaves and stems",White powdery growth,Powdery fungal growth,White powdery spots,"Stunted growth, Reduced yield",Powdery mildew on leaves and stems
+,Root Rot,"Root decay, yellowing of leaves; stunted plant growth","Yellowing, Wilting","Root decay, Stunted growth","Root decay, Yellowing","Severe wilting, Reduced growth",Roots may be blackened or mushy

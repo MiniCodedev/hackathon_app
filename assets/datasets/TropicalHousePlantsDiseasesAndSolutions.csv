@@ -1,0 +1,11 @@
+Plant/Herb,Disease,Symptoms,Wilting/Stunting,Spots/Lesions,Other Symptoms,Solution
+Areca Palm,Spider Mites,Yellowing and stippling,Yes,Fine webbing,Leaf drop,Increase humidity; use miticides
+Philodendron,Leaf Spot,"Dark, water-soaked spots",No,Brown to black lesions,Leaf drop,Improve air circulation; use fungicides
+Bird of Paradise,Powdery Mildew,White powdery spots on leaves,No,White patches,Distorted growth,Remove affected leaves; use antifungal treatments
+Rubber Plant,Fungal Leaf Spot,Circular brown lesions,No,"Brown, water-soaked spots",Yellowing leaves,Improve drainage; apply fungicides
+Monstera,Root Rot,"Wilting, yellowing leaves",Yes,N/A,Foul odor from soil,Ensure proper drainage; reduce watering
+Orchid,Bacterial Soft Rot,"Soft, mushy stems and leaves",Yes,N/A,Foul smell,Remove affected parts; avoid overhead watering
+Peace Lily,Leaf Spot,Brown or black spots,Yes,"Water-soaked, dark lesions",Leaf drop,Improve air circulation; avoid overhead watering
+Pothos,Anthracnose,"Dark, sunken spots on leaves",No,Dark lesions,Reduced growth,Remove affected leaves; use fungicides
+Snake Plant,Root Rot,"Yellowing leaves, stunted",Yes,N/A,Foul odor from soil,Improve drainage; reduce watering
+ZZ Plant,Root Rot,"Wilting, yellow leaves",Yes,N/A,Foul smell,Ensure good drainage; avoid overwatering

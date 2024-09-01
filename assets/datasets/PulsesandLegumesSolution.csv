@@ -1,0 +1,50 @@
+Disease,Crop,Solution,Application Method
+Powdery Mildew,"Chickpeas, Peas",- Apply sulfur-based fungicides.,- Spray fungicides and neem oil on affected plants.
+,,- Use neem oil.,
+,,- Improve air circulation.,
+,,- Avoid overhead watering.,
+Ascochyta Blight,Chickpeas,- Apply fungicides like chlorothalonil or carbendazim.,- Spray fungicides and remove diseased plant parts.
+,,- Remove and destroy infected plant parts.,
+,,- Practice crop rotation.,
+Fusarium Wilt,"Beans, Peas",- Use resistant varieties.,- Apply soil fungicides and manage soil health.
+,,- Apply soil fungicides.,
+,,- Improve soil drainage.,
+,,- Rotate crops.,
+Anthracnose,"Beans, Lentils",- Apply fungicides like mancozeb or carbendazim.,- Spray fungicides and manage crop rotation.
+,,- Remove and destroy infected plant parts.,
+,,- Practice crop rotation.,
+Bacterial Blight,"Beans, Lentils",- Use copper-based bactericides.,- Apply bactericides and improve ventilation.
+,,- Remove and destroy infected plant parts.,
+,,- Improve air circulation.,
+Leaf Spot,"Beans, Lentils",- Apply fungicides like chlorothalonil or mancozeb.,- Spray fungicides and remove affected leaves.
+,,- Remove affected leaves.,
+,,- Improve air circulation.,
+Root Rot,"Lentils, Peas",- Improve soil drainage.,- Apply fungicides and improve soil management.
+,,- Use fungicides like carbendazim.,
+,,- Avoid overwatering.,
+Cercospora Leaf Spot,Beans,- Apply fungicides like mancozeb.,- Spray fungicides and remove diseased foliage.
+,,- Remove affected leaves.,
+,,- Improve air circulation.,
+Sclerotinia Stem Rot,"Beans, Lentils",- Apply fungicides like tebuconazole.,- Spray fungicides and manage field drainage.
+,,- Remove and destroy infected plant parts.,
+,,- Improve field drainage.,
+Charcoal Rot,Beans,- Use resistant varieties.,- Apply fungicides and manage soil health.
+,,- Apply fungicides like thiophanate-methyl.,
+,,- Improve soil fertility.,
+Mosaic Virus,"Beans, Peas",- Use virus-free seeds.,- Remove infected plants and manage vector populations.
+,,- Remove and destroy infected plants.,
+,,- Control insect vectors.,
+Wilt,"Chickpeas, Beans",- Use resistant varieties.,- Apply soil fungicides and manage soil conditions.
+,,- Apply soil fungicides.,
+,,- Improve soil drainage.,
+,,- Practice crop rotation.,
+Downy Mildew,"Peas, Beans",- Apply fungicides like metalaxyl.,- Spray fungicides and manage air circulation.
+,,- Improve air circulation.,
+,,- Avoid high humidity.,
+,,- Practice crop rotation.,
+Rust,Beans,- Apply fungicides like propiconazole.,- Spray fungicides and manage plant health.
+,,- Remove and destroy infected plant parts.,
+,,- Use resistant varieties.,
+Mosaic Virus,"Chickpeas, Lentils",- Use virus-free seeds.,- Remove infected plants and manage vector populations.
+,,- Remove and destroy infected plants.,
+,,- Control insect vectors.,

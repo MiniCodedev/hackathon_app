@@ -1,0 +1,32 @@
+Crop,Disease,Symptoms,Leaf Color,Plant Structure,Spots and Lesions,Wilting and Stunting,Other Symptoms
+Tomato,Early Blight,"Dark, concentric ring spots on leaves; leaf drop","Dark spots, Yellowing","Leaf drop, Reduced yield","Dark, concentric spots","Reduced growth, Leaf drop",Lesions also on stems and fruit
+,Late Blight,"Irregular, water-soaked spots on leaves; brown patches on fruit",Brown patches,"Leaf drop, Reduced yield","Water-soaked lesions, Brown patches","Rapid wilting, Fruit rot",Fungal growth on leaves and fruit
+,Septoria Leaf Spot,"Small, dark spots with light gray centers on leaves; leaf drop","Dark spots, Yellowing","Leaf drop, Reduced yield",Dark spots with gray centers,"Reduced growth, Leaf drop",Lesions can coalesce
+,Blossom End Rot,"Dark, sunken lesions on the blossom end of fruit",Dark lesions,"Fruit rot, Reduced yield","Dark, sunken lesions",Reduced fruit quality,Lesions can become leathery
+Cucumber,Powdery Mildew,"White, powdery fungal growth on leaves and stems",White powdery growth,Powdery fungal growth,White powdery spots,"Stunted growth, Reduced yield",Powdery mildew on leaves and stems
+,Downy Mildew,Yellow patches on leaves with gray mold underneath,Yellow patches,Gray mold on leaves,Gray moldy patches,"Stunted growth, Reduced yield",Moldy appearance on leaves
+,Cucumber Beetle,Irregular holes in leaves; defoliation,"Damaged, Not specific","Leaf damage, Reduced yield","Irregular holes, Leaf damage","Stunted growth, Reduced yield",Beetle larvae may be present
+Bell Pepper,Bacterial Spot,"Small, dark, water-soaked spots on leaves; lesions on fruit","Dark spots, Yellowing","Leaf lesions, Reduced yield",Dark water-soaked spots,"Reduced growth, Fruit lesions",Lesions on stems and fruit
+,Pepper Wilt,Yellowing and wilting of leaves; root rot,"Yellowing, Wilting","Root rot, Stunted growth","Root rot, Yellowing","Severe wilting, Reduced growth",Vascular browning in stems
+,Blossom End Rot,"Dark, sunken lesions on the blossom end of fruit",Dark lesions,"Fruit rot, Reduced yield","Dark, sunken lesions",Reduced fruit quality,Lesions can become leathery
+Lettuce,Downy Mildew,Yellow patches on leaves with gray mold underneath,Yellow patches,Gray mold on leaves,Gray moldy patches,"Stunted growth, Reduced yield",Moldy appearance on leaves
+,Leaf Spot,"Small, dark spots with yellow halos on leaves",Yellow halos,"Leaf drop, Reduced yield",Dark spots with yellow halos,"Leaf drop, Reduced growth",Spots can merge and expand
+,Lettuce Drop,Wilting and death of plants; root rot,"Yellowing, Wilting","Root rot, Stunted growth","Root decay, Yellowing","Severe wilting, Reduced growth",Roots may be blackened or mushy
+Carrot,Carrot Rust Fly,"Small, reddish-brown spots on roots; root damage",Reddish-brown spots,"Root damage, Reduced yield",Reddish-brown spots on roots,"Reduced growth, Root damage",Root deformation
+,Alternaria Leaf Blight,"Dark, circular spots with concentric rings on leaves; leaf drop","Dark spots, Yellow halos","Leaf drop, Reduced yield","Dark, circular spots","Leaf drop, Reduced growth",Spots can merge and expand
+,Powdery Mildew,"White, powdery fungal growth on leaves and stems",White powdery growth,Powdery fungal growth,White powdery spots,"Stunted growth, Reduced yield",Powdery mildew on leaves and stems
+Onion,Downy Mildew,Yellow patches on leaves with gray mold underneath,Yellow patches,Gray mold on leaves,Gray moldy patches,"Stunted growth, Reduced yield",Moldy appearance on leaves
+,Onion Rust,Orange-brown pustules on leaves; reduces yield,Orange-brown pustules,Rust pustules on leaves,Orange-brown pustules,"Reduced growth, Leaf drop",Pustules become larger and coalesce
+,White Rot,White fungal growth at the base of the bulb; root decay,White fungal growth,"Root decay, Stunted growth",White fungal growth at base,"Wilting, Reduced growth",Bulbs may decay and rot
+Spinach,Downy Mildew,Yellow patches on leaves with gray mold underneath,Yellow patches,Gray mold on leaves,Gray moldy patches,"Stunted growth, Reduced yield",Moldy appearance on leaves
+,Alternaria Leaf Spot,"Dark, circular spots with concentric rings on leaves; early leaf drop","Dark spots, Yellow halos","Leaf drop, Reduced yield","Dark, circular spots","Leaf drop, Stunted growth",Spots can merge and expand
+,Powdery Mildew,"White, powdery fungal growth on leaves and stems",White powdery growth,Powdery fungal growth,White powdery spots,"Stunted growth, Reduced yield",Powdery mildew on leaves and stems
+Curry Leaves,Leaf Spot,"Small, dark spots with yellow halos on leaves; leaf drop",Yellow halos,"Leaf drop, Reduced yield",Dark spots with yellow halos,"Leaf drop, Reduced growth",Spots can merge and expand
+,Powdery Mildew,"White, powdery fungal growth on leaves and stems",White powdery growth,Powdery fungal growth,White powdery spots,"Stunted growth, Reduced yield",Powdery mildew on leaves and stems
+,Downy Mildew,Yellow patches on leaves with gray mold underneath,Yellow patches,Gray mold on leaves,Gray moldy patches,"Stunted growth, Reduced yield",Moldy appearance on leaves
+Coriander,Powdery Mildew,"White, powdery fungal growth on leaves and stems",White powdery growth,Powdery fungal growth,White powdery spots,"Stunted growth, Reduced yield",Powdery mildew on leaves and stems
+,Leaf Spot,"Small, dark spots with yellow halos on leaves; early leaf drop",Yellow halos,"Leaf drop, Reduced yield",Dark spots with yellow halos,"Leaf drop, Reduced growth",Spots can merge and expand
+,Downy Mildew,Yellow patches on leaves with gray mold underneath,Yellow patches,Gray mold on leaves,Gray moldy patches,"Stunted growth, Reduced yield",Moldy appearance on leaves
+Mint,Powdery Mildew,"White, powdery fungal growth on leaves and stems",White powdery growth,Powdery fungal growth,White powdery spots,"Stunted growth, Reduced yield",Powdery mildew on leaves and stems
+,Leaf Spot,"Small, dark spots with yellow halos on leaves; early leaf drop",Yellow halos,"Leaf drop, Reduced yield",Dark spots with yellow halos,"Leaf drop, Reduced growth",Spots can merge and expand
+,Downy Mildew,Yellow patches on leaves with gray mold underneath,Yellow patches,Gray mold on leaves,Gray moldy patches,"Stunted growth, Reduced yield",Moldy appearance on leaves

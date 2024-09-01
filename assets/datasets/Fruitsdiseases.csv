@@ -1,0 +1,48 @@
+Crop,Disease,Symptoms,Leaf Color,Plant Structure,Spots and Lesions,Wilting and Stunting,Other Symptoms
+Mango,Mango Anthracnose,"Dark, sunken lesions on fruit; leaf spots",Dark lesions,"Fruit rot, Reduced yield","Sunken, dark lesions",Reduced fruit quality,Lesions can coalesce and cause fruit drop
+,Powdery Mildew,"White, powdery fungal growth on leaves and fruit",White powdery growth,Powdery fungal growth,White powdery spots,Reduced fruit quality,Powdery mildew on leaves and fruit
+,Bacterial Spot,"Small, dark, water-soaked spots on leaves; lesions on fruit","Dark spots, Yellowing","Leaf lesions, Reduced yield",Dark water-soaked spots,Reduced fruit quality,Lesions can appear on stems and fruit
+Banana,Panama Disease,Wilting and yellowing of leaves; internal browning of pseudostems,"Yellowing, Wilting","Wilting, Internal browning","Internal browning, External wilt","Severe wilting, Reduced yield","Vascular discoloration, Pseudostem collapse"
+,Sigatoka Leaf Spot,"Small, dark spots on leaves with yellow halos; leaf drop","Dark spots, Yellow halos","Leaf drop, Reduced yield",Dark spots with yellow halos,"Leaf drop, Reduced growth",Lesions can merge and cause defoliation
+,Banana Bunchy Top Virus,Leaf rolling and stunting; reduced fruit size,"Rolling, Yellowing","Stunted growth, Reduced yield","Leaf rolling, Bunchy top formation",Reduced fruit quality,Mosaic patterns on leaves
+Guava,Guava Wilt,Yellowing and wilting of leaves; root rot,"Yellowing, Wilting","Root rot, Stunted growth","Root rot, Yellowing","Severe wilting, Reduced growth",Vascular browning in stems
+,Fruit Rot,"Soft, water-soaked lesions on fruit; fruit drop",Dark lesions,"Fruit rot, Reduced yield",Water-soaked lesions,Reduced fruit quality,Lesions can become leathery
+,Leaf Spot,"Dark, circular spots on leaves; leaf drop","Dark spots, Yellowing","Leaf drop, Reduced yield","Dark, circular spots","Leaf drop, Reduced growth",Spots can merge and expand
+Apple,Apple Scab,"Dark, sunken lesions on leaves and fruit; leaf drop",Dark lesions,"Leaf drop, Reduced yield",Sunken lesions with halos,Reduced fruit quality,Lesions can cause premature fruit drop
+,Powdery Mildew,"White, powdery fungal growth on leaves and fruit",White powdery growth,Powdery fungal growth,White powdery spots,Reduced fruit quality,Powdery mildew on leaves and fruit
+,Cedar Apple Rust,"Rusty, orange-brown lesions on leaves and fruit",Orange-brown lesions,"Leaf lesions, Reduced yield","Rusty, orange-brown lesions",Reduced fruit quality,Lesions can coalesce
+Pineapple,Pineapple Rot,"Soft, water-soaked lesions on fruit; fruit decay",Dark lesions,"Fruit rot, Reduced yield",Water-soaked lesions,Reduced fruit quality,Lesions can become mushy
+,Heart Rot,Internal decay in fruit; water-soaked lesions on crown,Dark lesions,"Internal decay, Reduced yield","Internal decay, Water-soaked lesions",Reduced fruit quality,Lesions cause fruit collapse
+,Powdery Mildew,"White, powdery fungal growth on leaves and fruit",White powdery growth,Powdery fungal growth,White powdery spots,Reduced fruit quality,Powdery mildew on leaves and fruit
+Orange,Citrus Canker,Lesions with oily appearance on leaves and fruit; leaf drop,Oily lesions,"Leaf drop, Reduced yield",Lesions with oily appearance,"Leaf drop, Reduced growth",Lesions can cause fruit drop
+,Greasy Spot,"Dark, greasy spots on leaves; leaf drop",Dark greasy spots,"Leaf drop, Reduced yield","Dark, greasy spots","Leaf drop, Reduced growth",Lesions can merge and cause defoliation
+,Powdery Mildew,"White, powdery fungal growth on leaves and fruit",White powdery growth,Powdery fungal growth,White powdery spots,Reduced fruit quality,Powdery mildew on leaves and fruit
+Papaya,Papaya Ringspot Virus,Rings and spots on leaves; distorted fruit,Rings and spots,"Distorted fruit, Reduced yield",Rings and spots on leaves,Reduced fruit quality,"Fruit distortion, Reduced yield"
+,Powdery Mildew,"White, powdery fungal growth on leaves and fruit",White powdery growth,Powdery fungal growth,White powdery spots,Reduced fruit quality,Powdery mildew on leaves and fruit
+,Fruit Rot,"Soft, water-soaked lesions on fruit; fruit decay",Dark lesions,"Fruit rot, Reduced yield",Water-soaked lesions,Reduced fruit quality,Lesions can become mushy
+Grapes,Powdery Mildew,"White, powdery fungal growth on leaves and fruit",White powdery growth,Powdery fungal growth,White powdery spots,Reduced fruit quality,Powdery mildew on leaves and fruit
+,Downy Mildew,Yellow patches on leaves with gray mold underneath,Yellow patches,Gray mold on leaves,Gray moldy patches,Reduced fruit quality,Moldy appearance on leaves
+,Botrytis Bunch Rot,"Soft, water-soaked lesions on fruit; fruit decay",Dark lesions,"Fruit rot, Reduced yield",Water-soaked lesions,Reduced fruit quality,Lesions can become mushy
+Pomegranate,Alternaria Fruit Rot,"Dark, sunken lesions on fruit; reduced yield",Dark lesions,"Fruit rot, Reduced yield","Dark, sunken lesions",Reduced fruit quality,Lesions can coalesce and cause fruit drop
+,Punicalagins Wilt,Yellowing and wilting of leaves; root rot,"Yellowing, Wilting","Root rot, Stunted growth","Root rot, Yellowing","Severe wilting, Reduced growth",Vascular browning in stems
+,Powdery Mildew,"White, powdery fungal growth on leaves and fruit",White powdery growth,Powdery fungal growth,White powdery spots,Reduced fruit quality,Powdery mildew on leaves and fruit
+Avocado,Avocado Root Rot,Wilting and yellowing of leaves; root rot,"Yellowing, Wilting","Root rot, Stunted growth","Root rot, Yellowing","Severe wilting, Reduced growth",Vascular browning in stems
+,Phytophthora Canker,"Dark, sunken lesions on fruit; reduced yield",Dark lesions,"Fruit rot, Reduced yield","Dark, sunken lesions",Reduced fruit quality,Lesions can coalesce and cause fruit drop
+,Powdery Mildew,"White, powdery fungal growth on leaves and fruit",White powdery growth,Powdery fungal growth,White powdery spots,Reduced fruit quality,Powdery mildew on leaves and fruit
+Guava,Guava Wilt,Yellowing and wilting of leaves; root rot,"Yellowing, Wilting","Root rot, Stunted growth","Root rot, Yellowing","Severe wilting, Reduced growth",Vascular browning in stems
+Jackfruit,Fruit Rot,"Soft, water-soaked lesions on fruit; fruit decay",Dark lesions,"Fruit rot, Reduced yield",Water-soaked lesions,Reduced fruit quality,Lesions can become mushy
+,Powdery Mildew,"White, powdery fungal growth on leaves and fruit",White powdery growth,Powdery fungal growth,White powdery spots,Reduced fruit quality,Powdery mildew on leaves and fruit
+,Anthracnose,"Dark, sunken lesions on fruit and leaves",Dark lesions,"Fruit rot, Reduced yield",Sunken lesions,Reduced fruit quality,Lesions can coalesce
+Lychee,Lychee Anthracnose,"Dark, sunken lesions on fruit; leaf spots",Dark lesions,"Fruit rot, Reduced yield","Sunken, dark lesions",Reduced fruit quality,Lesions can coalesce and cause fruit drop
+,Powdery Mildew,"White, powdery fungal growth on leaves and fruit",White powdery growth,Powdery fungal growth,White powdery spots,Reduced fruit quality,Powdery mildew on leaves and fruit
+,Fruit Rot,"Soft, water-soaked lesions on fruit; fruit decay",Dark lesions,"Fruit rot, Reduced yield",Water-soaked lesions,Reduced fruit quality,Lesions can become mushy
+Plum,Plum Curculio,"Small, sunken lesions on fruit; leaf drop",Sunken lesions,"Fruit drop, Reduced yield",Sunken lesions on fruit,Reduced fruit quality,Lesions can cause fruit drop
+,Powdery Mildew,"White, powdery fungal growth on leaves and fruit",White powdery growth,Powdery fungal growth,White powdery spots,Reduced fruit quality,Powdery mildew on leaves and fruit
+Peach,Peach Leaf Curl,Curling and distortion of leaves; reduced fruit quality,"Curling, Yellowing","Leaf distortion, Reduced yield",Curling and distortion of leaves,Reduced fruit quality,Lesions can cause fruit drop
+,Powdery Mildew,"White, powdery fungal growth on leaves and fruit",White powdery growth,Powdery fungal growth,White powdery spots,Reduced fruit quality,Powdery mildew on leaves and fruit
+Apricot,Apricot Blight,"Dark, sunken lesions on fruit; leaf drop",Dark lesions,"Fruit rot, Reduced yield",Sunken lesions on fruit,Reduced fruit quality,Lesions can coalesce
+,Powdery Mildew,"White, powdery fungal growth on leaves and fruit",White powdery growth,Powdery fungal growth,White powdery spots,Reduced fruit quality,Powdery mildew on leaves and fruit
+Cherry,Cherry Leaf Spot,"Dark, circular spots on leaves; leaf drop","Dark spots, Yellowing","Leaf drop, Reduced yield","Dark, circular spots","Leaf drop, Reduced growth",Spots can merge and expand
+,Powdery Mildew,"White, powdery fungal growth on leaves and fruit",White powdery growth,Powdery fungal growth,White powdery spots,Reduced fruit quality,Powdery mildew on leaves and fruit
+Fig,Fig Rust,"Small, reddish-brown spots on leaves and fruit",Reddish-brown spots,"Fruit drop, Reduced yield",Reddish-brown spots,Reduced fruit quality,Lesions can cause fruit drop
+,Powdery Mildew,"White, powdery fungal growth on leaves and fruit",White powdery growth,Powdery fungal growth,White powdery spots,Reduced fruit quality,Powdery mildew on leaves and fruit

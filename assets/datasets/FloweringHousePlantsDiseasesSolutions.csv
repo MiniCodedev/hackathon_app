@@ -1,0 +1,28 @@
+Plant/Flower,Disease,Symptoms,Wilting/Stunting,Spots/Lesions,Other Symptoms,Solution
+African Violet,Powdery Mildew,White powdery spots on leaves,No,White patches,Reduced growth,Remove affected leaves; use antifungal treatments
+Orchid,Bacterial Soft Rot,"Soft, mushy stems and leaves",Yes,N/A,Foul smell,Remove affected parts; avoid overhead watering
+Begonia,Leaf Spot,"Dark, water-soaked spots",No,Brown lesions,Leaf drop,Improve air circulation; use fungicides
+Geranium,Rust,Orange or red spots on leaves,No,Orange pustules,Leaf drop,Apply rust fungicides; improve drainage
+Peace Lily,Leaf Spot,Brown or black spots,Yes,"Water-soaked, dark lesions",Leaf drop,Improve air circulation; avoid overhead watering
+Kalanchoe,Powdery Mildew,White powdery coating,No,White spots on leaves,Reduced growth,Remove affected leaves; use antifungal sprays
+Christmas Cactus,Root Rot,"Wilting, yellowing leaves",Yes,N/A,Foul odor from soil,Improve drainage; reduce watering
+Bromeliad,Leaf Spot,Brown spots on leaves,No,Water-soaked lesions,Reduced growth,Improve air circulation; use fungicides
+Anthurium,Bacterial Blight,"Water-soaked spots, leaf drop",Yes,N/A,Wilting,Remove infected leaves; avoid overhead watering
+Cyclamen,Powdery Mildew,White powdery coating,No,White spots on leaves,Reduced growth,Remove affected leaves; use antifungal sprays
+Poinsettia,Leaf Spot,Dark spots on leaves,Yes,Water-soaked lesions,Leaf drop,Improve air circulation; use fungicides
+Jasmine,Root Rot,"Wilting, yellow leaves",Yes,N/A,Foul smell,Ensure good drainage; reduce watering
+Hibiscus,Aphid Infestation,Distorted leaves,Yes,N/A,Sticky residue,Use insecticidal soap; increase air circulation
+Coleus,Downy Mildew,Yellowing leaves,Yes,N/A,Fuzzy white growth,Improve air circulation; use fungicides
+Fuchsia,Leaf Spot,Dark spots on leaves,No,Dark lesions,Reduced growth,Improve air circulation; use fungicides
+Pilea,Leaf Spot,Brown spots on leaves,No,Water-soaked lesions,Leaf drop,Improve air circulation; use fungicides
+Impatiens,Powdery Mildew,White powdery coating,Yes,White spots on leaves,Reduced growth,Remove affected leaves; use antifungal sprays
+Oxalis,Rust,Orange spots on leaves,No,Orange pustules,Leaf drop,Apply rust fungicides; improve drainage
+Hoya,Leaf Spot,"Dark, water-soaked spots",No,Brown lesions,Leaf drop,Improve air circulation; use fungicides
+Chrysanthemum,Bacterial Blight,"Water-soaked spots, leaf drop",Yes,N/A,Wilting,Remove infected leaves; avoid overhead watering
+Maranta,Leaf Spot,Brown spots on leaves,No,Water-soaked lesions,Leaf drop,Improve air circulation; use fungicides
+Dieffenbachia,Root Rot,"Wilting, yellow leaves",Yes,N/A,Foul smell,Ensure good drainage; reduce watering
+Calathea,Leaf Spot,Dark spots on leaves,No,Water-soaked lesions,Reduced growth,Improve air circulation; use fungicides
+Sansevieria,Root Rot,"Yellowing leaves, stunted",Yes,N/A,Foul odor from soil,Improve drainage; reduce watering
+Soleirolia,Powdery Mildew,White powdery coating,Yes,White spots on leaves,Reduced growth,Remove affected leaves; use antifungal sprays
+Kalanchoe,Root Rot,"Wilting, yellow leaves",Yes,N/A,Foul smell,Improve drainage; reduce watering
+Cymbidium,Leaf Spot,Dark spots on leaves,No,Water-soaked lesions,Reduced growth,Improve air circulation; use fungicides

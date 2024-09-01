@@ -1,0 +1,22 @@
+Crop,Disease,Symptoms,Leaf Color,Plant Structure,Spots and Lesions,Wilting and Stunting,Other Symptoms
+Groundnut,Early Leaf Spot,"Small, dark brown spots with concentric rings; leaf drop","Brown spots, Yellowing","Leaf drop, Reduced yield",Dark brown spots with rings,"Leaf drop, Stunted growth",Lesions spread rapidly
+,Late Leaf Spot,"Large, irregular dark brown spots with yellow halos; leaf drop","Dark brown spots, Yellow halos","Leaf drop, Reduced yield",Large irregular spots,"Leaf drop, Reduced growth",Lesions can merge
+,Rust,Orange-brown pustules on leaves and stems; reduces yield,Orange-brown pustules,Rust pustules on leaves,Orange-brown pustules,"Reduced growth, Leaf drop",Pustules appear in clusters
+,Groundnut Bud Necrosis,Necrosis of buds and pods; reduced pod formation,Brown necrosis,"Bud necrosis, Reduced pods",Necrotic lesions on buds and pods,Reduced pod yield,Pod deformities
+Sunflower,Powdery Mildew,"White, powdery fungal growth on leaves and stems",White powdery growth,Powdery fungal growth,White powdery spots,"Stunted growth, Reduced yield",Powdery mildew on leaves and stems
+,Downy Mildew,Yellow patches on leaves with gray mold underneath,Yellow patches,Gray mold on leaves,Gray moldy patches,"Stunted growth, Reduced yield",Moldy appearance on leaves
+,Phoma Black Stem,"Dark, sunken lesions on stems; reduced seed quality",Dark lesions,"Stem lesions, Reduced yield",Sunken dark lesions on stems,"Reduced plant height, Lodging",Lesions cause stem weakening
+,Rust,Red-brown pustules on leaves; reduces yield,Red-brown pustules,Rust pustules on leaves,"Red-brown pustules, Powdery","Reduced growth, Leaf drop",Pustules become larger and coalesce
+Soybean,Soybean Rust,Red-brown pustules on leaves; reduces yield,Red-brown pustules,Rust pustules on leaves,"Red-brown pustules, Powdery","Reduced growth, Leaf drop",Pustules become larger and coalesce
+,Aphid Infestation,Distorted leaves; honeydew secretion; sooty mold formation,"Distorted, Sticky",Distorted leaves,"Honeydew secretion, Sooty mold","Stunted growth, Reduced yield",Sooty mold on leaves
+,Brown Spot,"Large, round brown spots with yellow halos; leaf tip dieback","Brown spots, Yellowing","Leaf dieback, Reduced growth","Round brown spots, Yellow halos",Wilting of lower leaves,Brown necrosis at leaf tips
+Canola (Rapeseed),Blackleg,"Dark, sunken lesions on stems; seedling damping-off",Dark lesions,"Stem lesions, Reduced yield",Sunken dark lesions on stems,"Reduced plant height, Lodging",Lesions can spread rapidly
+,Powdery Mildew,"White, powdery fungal growth on leaves and stems",White powdery growth,Powdery fungal growth,White powdery spots,"Stunted growth, Reduced yield",Powdery mildew on leaves and stems
+,Sclerotinia Stem Rot,White mold on stems; wilting and lodging of plants,White moldy patches,"Stem rot, Lodging",White mold on stems,"Wilting, Lodging",Moldy appearance on stems
+,Alternaria Leaf Spot,Dark brown spots with concentric rings on leaves; leaf drop,"Dark spots, Yellow halos","Leaf drop, Reduced yield",Dark brown spots with rings,"Leaf drop, Reduced growth",Lesions often coalesce
+Sesame,Cercospora Leaf Spot,"Small, dark brown spots with yellow halos; leaf drop","Brown spots, Yellowing","Leaf drop, Reduced yield","Dark, round spots with halos","Leaf drop, Reduced growth",Lesions can merge over time
+,Powdery Mildew,"White, powdery fungal growth on leaves and stems",White powdery growth,Powdery fungal growth,White powdery spots,"Stunted growth, Reduced yield",Powdery mildew on leaves and stems
+,Alternaria Blight,"Dark brown, irregular spots with yellow halos on leaves; reduced seed quality","Dark spots, Yellow halos","Leaf lesions, Reduced yield","Dark, irregular spots with halos","Reduced seed quality, Leaf drop",Lesions spread rapidly
+Flax,Flax Rust,Orange-red pustules on leaves and stems; reduces yield,Orange-red pustules,Rust pustules on leaves,Orange-red pustules,"Reduced growth, Leaf drop",Pustules become larger and coalesce
+,Powdery Mildew,"White, powdery fungal growth on leaves and stems",White powdery growth,Powdery fungal growth,White powdery spots,"Stunted growth, Reduced yield",Powdery mildew on leaves and stems
+,Fusarium Wilt,Yellowing and wilting of leaves; root rot,"Yellowing, Wilting","Root rot, Stunted growth","Root rot, Yellowing","Severe wilting, Reduced growth",Vascular browning in stems

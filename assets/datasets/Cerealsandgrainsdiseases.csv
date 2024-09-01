@@ -1,0 +1,23 @@
+Crop,Disease,Symptoms,Leaf Color,Plant Structure,Spots and Lesions,Wilting and Stunting,Other Symptoms
+Rice,Bacterial Blight,Water-soaked lesions on leaves; yellowing; reduced grain size,"Yellowing, Brown spots","Leaf lesions, Stunted growth","Water-soaked spots, Dark brown",Wilting in severe cases,Lesions with yellowish margins
+,Leaf Spot,"Small, dark spots with yellow halos; leaf drop",Yellow halos around spots,"Leaf drop, Reduced yield","Small dark spots, Concentric rings",Leaf drop and necrosis,Lesions become larger over time
+,Sheath Blight,"Brown, necrotic lesions on the leaf sheath; reduces grain quality","Brown, Yellowish","Sheath lesions, Reduced yield","Brown, irregular lesions",Weakening of sheath,"Dark, water-soaked lesions"
+,Blast,Diamond-shaped lesions with gray centers; panicle blast,"Yellowish-brown, Gray",Reduced panicle size,Diamond-shaped lesions,"Reduced plant height, lodging",Gray centers in lesions
+,Brown Spot,"Large, round brown spots with yellow halos; leaf tip dieback","Brown spots, Yellowing","Leaf dieback, Reduced growth","Round brown spots, Yellow halos",Wilting of lower leaves,Brown necrosis at leaf tips
+Maize,Leaf Blight,"Water-soaked lesions, necrotic spots; premature leaf drop","Yellowish-brown, Necrotic","Leaf drop, Reduced growth","Water-soaked, Necrotic lesions","Stunted growth, Leaf drop",Dark streaks on leaves
+,Rust,"Orange, powdery pustules on leaves and stems",Orange pustules,Rust pustules on leaves,"Orange pustules, Powdery","Leaf drop, Reduced growth",Pustules appear in clusters
+,Grey Leaf Spot,Grayish lesions with dark borders; necrosis and leaf drop,"Gray lesions, Dark borders","Necrotic lesions, Reduced growth","Grayish lesions, Dark borders","Leaf drop, Stunted growth",Lesions become larger over time
+,Northern Corn Leaf Blight,"Elongated, tan lesions with dark borders on leaves; premature leaf drop","Tan lesions, Dark borders",Elongated lesions,Tan lesions with dark borders,"Leaf drop, Reduced yield",Lesions often coalesce
+Wheat,Rust,Red-brown pustules on leaves and stems; reduces yield,Red-brown pustules,Rust pustules on leaves,"Red-brown pustules, Powdery","Reduced growth, Leaf drop",Pustules become larger and coalesce
+,Blight,Dark lesions with yellow margins; leaf necrosis,"Dark lesions, Yellow margins","Leaf necrosis, Reduced yield","Dark lesions, Yellow margins","Wilting, Reduced growth",Lesions often coalesce
+,Fusarium Head Blight,Bleaching of spikelets; pink to white fungal growth on heads,Bleached spikelets,Bleached heads,Pink fungal growth on heads,"Head bleaching, Reduced yield",White fungal growth on heads
+,Powdery Mildew,"White, powdery fungal growth on leaves and stems",White powdery growth,Powdery fungal growth,White powdery spots,"Stunted growth, Reduced yield",Powdery mildew on leaves and stems
+Barley,Rust,Red-brown pustules on leaves and stems; reduces yield,Red-brown pustules,Rust pustules on leaves,"Red-brown pustules, Powdery","Reduced growth, Leaf drop",Pustules become larger and coalesce
+,Blight,"Dark, necrotic lesions with yellow halos; leaf drop","Dark lesions, Yellow halos","Leaf necrosis, Reduced yield","Dark lesions, Yellow halos","Wilting, Reduced growth",Lesions often coalesce
+,Powdery Mildew,"White, powdery fungal growth on leaves and stems",White powdery growth,Powdery fungal growth,White powdery spots,"Stunted growth, Reduced yield",Powdery mildew on leaves and stems
+Oats,Crown Rust,Orange pustules on leaves and stems; stunted growth,Orange pustules,Rust pustules on leaves,"Orange pustules, Powdery","Stunted growth, Reduced yield",Pustules appear in clusters
+,Leaf Blight,Dark lesions with yellow halos; necrosis on leaves,"Dark lesions, Yellow halos","Leaf necrosis, Reduced yield",Dark lesions with yellow halos,"Wilting, Reduced growth",Lesions often coalesce
+,Powdery Mildew,"White, powdery fungal growth on leaves and stems",White powdery growth,Powdery fungal growth,White powdery spots,"Stunted growth, Reduced yield",Powdery mildew on leaves and stems
+Rye,Rye Rust,Red-brown pustules on leaves and stems; reduces yield,Red-brown pustules,Rust pustules on leaves,"Red-brown pustules, Powdery","Reduced growth, Leaf drop",Pustules become larger and coalesce
+,Leaf Spot,"Dark, necrotic lesions with yellow halos; leaf drop","Dark lesions, Yellow halos","Leaf necrosis, Reduced yield","Dark lesions, Yellow halos","Wilting, Reduced growth",Lesions often coalesce
+,Powdery Mildew,"White, powdery fungal growth on leaves and stems",White powdery growth,Powdery fungal growth,White powdery spots,"Stunted growth, Reduced yield",Powdery mildew on leaves and stems

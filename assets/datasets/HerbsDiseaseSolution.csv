@@ -1,0 +1,27 @@
+Plant/Herb,Disease,Symptoms,Wilting/Stunting,Spots/Lesions,Other Symptoms,Solution
+Basil,Downy Mildew,Yellowing leaves,Yes,Yellow spots,Fuzzy white growth,Improve air circulation; use fungicides
+Mint,Rust,Red spots on leaves,No,Red or orange pustules,Leaf drop,Apply rust fungicides; improve drainage
+Thyme,Powdery Mildew,White powdery coating,Yes,White spots on leaves,Reduced growth,Remove affected leaves; use antifungal sprays
+Oregano,Leaf Spot,Dark spots on leaves,No,"Dark, water-soaked lesions",Leaf drop,Improve air circulation; use fungicides
+Parsley,Downy Mildew,Yellowing and curling leaves,Yes,N/A,Fuzzy white growth,Improve air circulation; use fungicides
+Sage,Bacterial Blight,"Water-soaked spots, leaf drop",Yes,N/A,Wilting,Remove infected leaves; avoid overhead watering
+Cilantro,Aphid Infestation,Distorted leaves,Yes,N/A,Sticky residue,Use insecticidal soap; increase air circulation
+Dill,Powdery Mildew,White powdery coating,Yes,White spots on leaves,Reduced growth,Remove affected leaves; use antifungal sprays
+Chives,Rust,Yellowing and curling leaves,No,Orange pustules,Leaf drop,Apply rust fungicides; improve drainage
+Lemon Balm,Leaf Spot,Brown spots on leaves,No,Water-soaked lesions,Leaf drop,Improve air circulation; use fungicides
+Tarragon,Root Rot,"Wilting, yellow leaves",Yes,N/A,Foul smell,Improve drainage; reduce watering
+Marjoram,Leaf Blight,"Brown, necrotic spots",No,Brown lesions,Reduced growth,Improve air circulation; use fungicides
+Lavender,Root Rot,"Wilting, yellowing leaves",Yes,N/A,Foul odor from soil,Ensure good drainage; reduce watering
+Rosemary,Powdery Mildew,White powdery coating,Yes,White spots on leaves,Reduced growth,Remove affected leaves; use antifungal sprays
+Fennel,Leaf Spot,Dark spots on leaves,No,Dark lesions,Leaf drop,Improve air circulation; use fungicides
+Bay Leaf,Bacterial Leaf Spot,"Dark, water-soaked spots",No,Water-soaked lesions,Leaf drop,Improve drainage; use copper fungicides
+Anise,Downy Mildew,Yellowing leaves,Yes,N/A,Fuzzy white growth,Improve air circulation; use fungicides
+Comfrey,Leaf Spot,Dark spots on leaves,No,Water-soaked lesions,Reduced growth,Improve air circulation; use fungicides
+Lovage,Root Rot,"Wilting, yellow leaves",Yes,N/A,Foul odor from soil,Ensure good drainage; reduce watering
+Cardamom,Leaf Blight,"Brown, necrotic spots",Yes,Brown lesions,Reduced growth,Improve air circulation; use fungicides
+Coriander,Aphid Infestation,Distorted leaves,Yes,N/A,Sticky residue,Use insecticidal soap; increase air circulation
+Sorrel,Powdery Mildew,White powdery coating,Yes,White spots on leaves,Reduced growth,Remove affected leaves; use antifungal sprays
+Chervil,Leaf Spot,Dark spots on leaves,No,Dark lesions,Reduced growth,Improve air circulation; use fungicides
+Horseradish,Root Rot,"Wilting, yellow leaves",Yes,N/A,Foul smell,Improve drainage; reduce watering
+Nasturtium,Downy Mildew,Yellowing and curling leaves,Yes,N/A,Fuzzy white growth,Improve air circulation; use fungicides
+Dill,Powdery Mildew,White powdery coating,Yes,White spots on leaves,Reduced growth,Remove affected leaves; use antifungal sprays
