@@ -3,12 +3,14 @@ import 'package:google_generative_ai/google_generative_ai.dart';
 import 'package:hackathon_app/services/data.dart';
 
 class ApiServices {
+  String apikeygpt =
+      "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";
   late ChatSession chat;
   late GenerativeModel model;
   ApiServices() {
     String apiKey = "AIzaSyBCN7k2i4E9L48vtyRR4MBOMyPds3Sc8cQ";
     final model = GenerativeModel(
-      model: 'gemini-1.5-pro',
+      model: 'gemini-1.5-flash',
       apiKey: apiKey,
     );
     this.model = model;

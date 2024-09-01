@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'dart:io';
 import 'dart:typed_data';
-
 import 'package:flutter/material.dart';
 import 'package:hackathon_app/constant.dart';
 import 'package:hackathon_app/services/api_services.dart';
@@ -40,8 +39,9 @@ class _HomePageState extends State<HomePage> {
 
     message.add(["GenixAi", chat, "null"]);
     animateToEnd();
-    imageBytes = null;
+
     setState(() {
+      imageBytes = null;
       isfetching = false;
     });
   }
@@ -62,15 +62,16 @@ class _HomePageState extends State<HomePage> {
     }
   }
 
-  onSubmit(String usermsg) {
+  onSubmit() {
     isfetching = true;
     message.add(["user", usermsg, imageBytes ?? "null"]);
-    usermsg = "";
-    userTextField.clear();
-    usingImage = false;
-    setState(() {});
     animateToEnd();
     chatMessage(usermsg);
+    userTextField.clear();
+    setState(() {
+      usermsg = "";
+      usingImage = false;
+    });
   }
 
   @override
@@ -142,7 +143,7 @@ class _HomePageState extends State<HomePage> {
                                 : usermsg.isEmpty
                                     ? null
                                     : () {
-                                        onSubmit(usermsg);
+                                        onSubmit();
                                       },
                             icon: Icon(
                               Icons.send_rounded,
