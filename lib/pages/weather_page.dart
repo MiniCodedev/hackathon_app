@@ -135,7 +135,7 @@ class _WeatherPageState extends State<WeatherPage> {
                             });
                           },
                           child: Card(
-                            color: selected == index ? Colors.blueGrey : null,
+                            color: selected == index ? Colors.cyan[800] : null,
                             child: Padding(
                               padding: const EdgeInsets.all(10),
                               child: Text(

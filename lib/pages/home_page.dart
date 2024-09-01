@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:io';
 import 'dart:typed_data';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hackathon_app/constant.dart';
 import 'package:hackathon_app/pages/weather_page.dart';
@@ -87,27 +88,27 @@ class _HomePageState extends State<HomePage> {
                   builder: (context) => const WeatherPage(),
                 ));
               },
-              icon: const Icon(Icons.cloud))
+              icon: const Icon(
+                CupertinoIcons.cloud_sun_rain_fill,
+                size: 30,
+              ))
         ],
       ),
       body: Column(
         children: [
           Expanded(
-            child: Padding(
-              padding: const EdgeInsets.all(5.0),
-              child: ListView.builder(
-                controller: scrollController,
-                shrinkWrap: true,
-                itemCount: message.length,
-                itemBuilder: (context, index) {
-                  return MessageTile(
-                    name: message[index][0],
-                    message: message[index][1],
-                    image:
-                        message[index][2] == "null" ? null : message[index][2],
-                  );
-                },
-              ),
+            child: ListView.builder(
+              padding: const EdgeInsets.all(5),
+              controller: scrollController,
+              shrinkWrap: true,
+              itemCount: message.length,
+              itemBuilder: (context, index) {
+                return MessageTile(
+                  name: message[index][0],
+                  message: message[index][1],
+                  image: message[index][2] == "null" ? null : message[index][2],
+                );
+              },
             ),
           ),
           Container(
