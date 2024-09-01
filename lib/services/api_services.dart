@@ -6,11 +6,10 @@ class ApiServices {
   late ChatSession chat;
   late GenerativeModel model;
   ApiServices() {
-    String apiKey = "AIzaSyAvuRtBGVYMlI_OcGE_QmKRmDLBR6u6J98";
+    String apiKey = "AIzaSyBCN7k2i4E9L48vtyRR4MBOMyPds3Sc8cQ";
     final model = GenerativeModel(
-      model: 'gemini-1.5-flash',
+      model: 'gemini-1.5-pro',
       apiKey: apiKey,
-      generationConfig: GenerationConfig(maxOutputTokens: 200),
     );
     this.model = model;
     ChatSession chat = model.startChat(history: [Content.model(getData())]);
