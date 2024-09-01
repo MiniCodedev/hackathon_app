@@ -1,6 +1,8 @@
+import 'dart:convert';
 import 'dart:typed_data';
 import 'package:google_generative_ai/google_generative_ai.dart';
 import 'package:hackathon_app/services/data.dart';
+import 'package:http/http.dart' as http;
 
 class ApiServices {
   String apikeygpt =
@@ -47,5 +49,40 @@ class ApiServices {
     var content = Content.text(userMessage);
     var response = await chat.sendMessage(content);
     return response.text ?? "";
+  }
+}
+
+class WeatherApi {
+  String apiKey = 'e114a7a0ae595a3fab28ba629489de90';
+
+  Future getWeather(String city) async {
+    final url = Uri.parse("http://api.openweathermap.org/data/2.5/forecast");
+
+    final params = {
+      'q': city,
+      'appid': apiKey,
+      'units': 'metric',
+    };
+
+    final uri = url.replace(queryParameters: params);
+    final response = await http.get(uri);
+
+    if (response.statusCode == 200) {
+      final data = jsonDecode(response.body);
+      for (var entry in data['list']) {
+        String dtTxt = entry['dt_txt'];
+        var main = entry['main'];
+        var weather = entry['weather'][0];
+
+        print("\nDate and Time: $dtTxt");
+        print("Temperature: ${main['temp']}°C");
+        print("Weather: ${weather['description'].toString()}");
+        print("Humidity: ${main['humidity']}%");
+        print("Pressure: ${main['pressure']} hPa");
+      }
+      return data["list"];
+    } else {
+      return "Error fetching weather data. Please check your API key and city name.";
+    }
   }
 }
