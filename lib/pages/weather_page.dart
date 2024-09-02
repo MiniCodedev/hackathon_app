@@ -54,7 +54,7 @@ class _WeatherPageState extends State<WeatherPage> {
   Future getCurrentWeather(int index, String city) async {
     try {
       final url = Uri.parse("http://api.openweathermap.org/data/2.5/forecast");
-
+      final newData = [];
       final params = {
         'q': city,
         'appid': apiKey,
@@ -73,7 +73,13 @@ class _WeatherPageState extends State<WeatherPage> {
       humidity = data["list"][index]["main"]["humidity"].toString();
       windSpeed = data["list"][index]["wind"]["speed"].toString();
       pressure = data["list"][index]["main"]["pressure"].toString();
-      forecast = data["list"];
+      for (var entry in data["list"]) {
+        String dtTxt = date[index];
+        if (entry["dt_txt"].toString().contains(dtTxt)) {
+          newData.add(entry);
+        }
+      }
+      forecast = newData;
 
       return data;
     } catch (e) {
