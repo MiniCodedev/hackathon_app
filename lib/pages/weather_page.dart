@@ -152,8 +152,9 @@ class _WeatherPageState extends State<WeatherPage> {
                               child: Padding(
                                 padding: const EdgeInsets.all(10),
                                 child: Text(
-                                  "${date[index]}",
-                                  style: TextStyle(fontWeight: FontWeight.w600),
+                                  date[index],
+                                  style: const TextStyle(
+                                      fontWeight: FontWeight.w600),
                                 ),
                               ),
                             ),
