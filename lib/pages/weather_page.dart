@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'dart:ui';
+import 'package:flutter/cupertino.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
@@ -196,10 +197,12 @@ class _WeatherPageState extends State<WeatherPage> {
                                           height: 16,
                                         ),
                                         Icon(
-                                          currentSky == "Clouds" ||
-                                                  currentSky == "Rain"
+                                          currentSky == "Clouds"
                                               ? Icons.cloud
-                                              : Icons.sunny,
+                                              : currentSky == "Rain"
+                                                  ? CupertinoIcons
+                                                      .cloud_rain_fill
+                                                  : Icons.sunny,
                                           size: 64,
                                         ),
                                         const SizedBox(
