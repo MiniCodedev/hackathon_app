@@ -107,6 +107,7 @@ class _WeatherPageState extends State<WeatherPage> {
 
   @override
   Widget build(BuildContext context) {
+    final height = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: AppBar(
         actions: [
@@ -165,10 +166,20 @@ class _WeatherPageState extends State<WeatherPage> {
                     future: getCurrentWeather(selected, city_),
                     builder: (context, snapshot) {
                       if (snapshot.connectionState == ConnectionState.waiting) {
-                        return const Center(
-                          child: CircularProgressIndicator(
-                            color: Colors.white,
-                          ),
+                        return Column(
+                          children: [
+                            SizedBox(
+                              height: height / 2.5,
+                            ),
+                            const Center(
+                              child: CircularProgressIndicator(
+                                color: Colors.white,
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 200,
+                            )
+                          ],
                         );
                       } else if (snapshot.hasError) {
                         return const Center(child: Text("ERROR"));
@@ -287,33 +298,32 @@ class _WeatherPageState extends State<WeatherPage> {
                                     number: "$pressure"),
                               ],
                             ),
-                            Container(
-                              padding: const EdgeInsets.all(10),
-                              child: TextField(
-                                controller: userTextField,
-                                onChanged: (value) {
-                                  city_ = value;
-                                },
-                                decoration: InputDecoration(
-                                  prefixIcon: const Icon(CupertinoIcons.map),
-                                  suffixIcon: IconButton(
-                                      onPressed: () async {
-                                        await getDate(city_);
-                                        setState(() {});
-                                      },
-                                      icon: const Icon(
-                                          CupertinoIcons.cloud_download)),
-                                  hintText: "City name",
-                                  border: border,
-                                  focusedBorder: focusborder,
-                                ),
-                              ),
-                            )
                           ],
                         ),
                       );
                     },
                   ),
+                  Container(
+                    padding: const EdgeInsets.all(10),
+                    child: TextField(
+                      controller: userTextField,
+                      onChanged: (value) {
+                        city_ = value;
+                      },
+                      decoration: InputDecoration(
+                        prefixIcon: const Icon(CupertinoIcons.map),
+                        suffixIcon: IconButton(
+                            onPressed: () async {
+                              await getDate(city_);
+                              setState(() {});
+                            },
+                            icon: const Icon(CupertinoIcons.cloud_download)),
+                        hintText: "City name",
+                        border: border,
+                        focusedBorder: focusborder,
+                      ),
+                    ),
+                  )
                 ],
               ),
             ),
