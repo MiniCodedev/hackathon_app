@@ -32,6 +32,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_launcher_icons: ^0.13.1
+  flutter_native_splash: ^2.4.1
   google_generative_ai: ^0.4.5
   http: ^1.2.2
   image_picker: ^1.1.2
@@ -47,7 +48,18 @@ flutter_launcher_icons:
   ios: true
   image_path: "assets/images/icon.png"
   adaptive_icon_background: "#ffffff"
-  adaptive_icon_foreground: "assets/images/icon.png"
+  adaptive_icon_foreground: "assets/images/logo.png"
+
+flutter_native_splash:
+  color: "#ffffff"
+  image: assets/images/logo.png
+  background_image: assets/images/background.png
+  branding: assets/images/brand.png
+
+  android_12:
+    color: "#ffffff"
+    image: assets/images/icon.png
+    branding: assets/images/brand.png
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
