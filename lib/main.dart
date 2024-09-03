@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:hackathon_app/pages/responsive_layout.dart';
 import 'constant.dart';
-import 'pages/home_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const HomePage(),
+      home: ResponsiveLayout(),
       theme: ThemeData(
         fontFamily: "Poppins",
         colorSchemeSeed: primaryColor,
