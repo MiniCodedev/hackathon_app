@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: ResponsiveLayout(),
+      home: const ResponsiveLayout(),
       theme: ThemeData(
         fontFamily: "Poppins",
         colorSchemeSeed: primaryColor,

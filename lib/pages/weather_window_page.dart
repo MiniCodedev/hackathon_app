@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:ui';
 import 'package:flutter/cupertino.dart';
+import 'package:google_generative_ai/google_generative_ai.dart';
 import 'package:hackathon_app/constant.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
@@ -24,12 +25,14 @@ class _WeatherWindowPageState extends State<WeatherWindowPage> {
   int selected = 0;
   String apiKey = 'e114a7a0ae595a3fab28ba629489de90';
   List<String> date = [];
+  List<List<String>> weatherTemp = [];
   String city_ = "Chennai";
   TextEditingController userTextField = TextEditingController();
 
   Future getDate(String city) async {
     final url = Uri.parse("http://api.openweathermap.org/data/2.5/forecast");
     List<String> date_ = [];
+    List<List<String>> weather_ = [];
 
     final params = {
       'q': city,
@@ -45,9 +48,14 @@ class _WeatherWindowPageState extends State<WeatherWindowPage> {
       for (var entry in data['list']) {
         String dtTxt = entry['dt_txt'].toString().split(" ")[0];
         if (!date_.contains(dtTxt)) {
+          weather_.add([
+            entry["weather"][0]["main"].toString(),
+            entry["main"]["temp"].toString()
+          ]);
           date_.add(dtTxt);
         }
       }
+      weatherTemp = weather_;
       return date_;
     } else {
       return "Error fetching weather data. Please check your API key and city name.";
@@ -58,6 +66,7 @@ class _WeatherWindowPageState extends State<WeatherWindowPage> {
     try {
       final url = Uri.parse("http://api.openweathermap.org/data/2.5/forecast");
       final newData = [];
+
       final params = {
         'q': city,
         'appid': apiKey,
@@ -86,6 +95,9 @@ class _WeatherWindowPageState extends State<WeatherWindowPage> {
 
       return data;
     } catch (e) {
+      ScaffoldMessenger.of(context)
+        ..hideCurrentSnackBar()
+        ..showSnackBar(snackBarError);
       throw e.toString();
     }
   }
@@ -147,8 +159,6 @@ class _WeatherWindowPageState extends State<WeatherWindowPage> {
                       )
                     ],
                   );
-                } else if (snapshot.hasError) {
-                  return const Center(child: Text("ERROR"));
                 }
                 return Padding(
                   padding: const EdgeInsets.all(10),
@@ -158,6 +168,7 @@ class _WeatherWindowPageState extends State<WeatherWindowPage> {
                       SizedBox(
                         width: width / 2.3,
                         child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Container(
                               padding: const EdgeInsets.all(10),
@@ -182,72 +193,80 @@ class _WeatherWindowPageState extends State<WeatherWindowPage> {
                               ),
                             ),
                             Expanded(
-                              child: Card(
-                                elevation: 7,
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(16)),
-                                child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(16),
-                                  child: BackdropFilter(
-                                    filter:
-                                        ImageFilter.blur(sigmaX: 5, sigmaY: 5),
-                                    child: Padding(
-                                      padding: const EdgeInsets.all(8.0),
-                                      child: Column(
-                                        children: [
-                                          Text(
-                                            "$currentTemp K",
-                                            style: const TextStyle(
-                                                fontSize: 32,
-                                                fontWeight: FontWeight.bold),
-                                          ),
-                                          const SizedBox(
-                                            height: 16,
-                                          ),
-                                          Icon(
-                                            currentSky == "Clouds"
-                                                ? Icons.cloud
-                                                : currentSky == "Rain"
-                                                    ? CupertinoIcons
-                                                        .cloud_rain_fill
-                                                    : Icons.sunny,
-                                            size: 64,
-                                          ),
-                                          const SizedBox(
-                                            height: 16,
-                                          ),
-                                          Text(
-                                            "$currentSky",
-                                            style: const TextStyle(
-                                              fontSize: 20,
-                                            ),
-                                          ),
-                                          SizedBox(
-                                            height: 20,
-                                          ),
-                                          Row(
-                                            children: [
-                                              Additional_Widget(
-                                                  icon:
-                                                      Icons.water_drop_rounded,
-                                                  name: "Humidity",
-                                                  number: "$humidity"),
-                                              Additional_Widget(
-                                                icon: Icons.air_rounded,
-                                                name: "Wind Speed",
-                                                number: "$windSpeed",
-                                              ),
-                                              Additional_Widget(
-                                                  icon: Icons
-                                                      .beach_access_rounded,
-                                                  name: "Pressure",
-                                                  number: "$pressure"),
-                                            ],
-                                          ),
-                                        ],
+                              child: Container(
+                                decoration: mirror,
+                                padding: const EdgeInsets.all(8),
+                                child: Column(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
+                                  children: [
+                                    Text(
+                                      "$currentTemp °C",
+                                      style: const TextStyle(
+                                          fontSize: 32,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                    const SizedBox(
+                                      height: 16,
+                                    ),
+                                    Icon(
+                                      currentSky == "Clouds"
+                                          ? Icons.cloud
+                                          : currentSky == "Rain"
+                                              ? CupertinoIcons.cloud_rain_fill
+                                              : Icons.sunny,
+                                      size: 64,
+                                    ),
+                                    const SizedBox(
+                                      height: 16,
+                                    ),
+                                    Text(
+                                      "$currentSky",
+                                      style: const TextStyle(
+                                        fontSize: 20,
                                       ),
                                     ),
-                                  ),
+                                    const SizedBox(
+                                      height: 20,
+                                    ),
+                                    Row(
+                                      children: [
+                                        const SizedBox(
+                                          width: 20,
+                                        ),
+                                        Additional_Widget(
+                                          icon: Icons.water_drop_rounded,
+                                          name: "Humidity",
+                                          number: "$humidity",
+                                          boxDecoration:
+                                              mirrorWidget(Colors.black),
+                                        ),
+                                        const SizedBox(
+                                          width: 20,
+                                        ),
+                                        Additional_Widget(
+                                          icon: Icons.air_rounded,
+                                          name: "Wind Speed",
+                                          number: "$windSpeed",
+                                          boxDecoration:
+                                              mirrorWidget(Colors.black),
+                                        ),
+                                        const SizedBox(
+                                          width: 20,
+                                        ),
+                                        Additional_Widget(
+                                          icon: Icons.beach_access_rounded,
+                                          name: "Pressure",
+                                          number: "$pressure",
+                                          boxDecoration:
+                                              mirrorWidget(Colors.black),
+                                        ),
+                                        const SizedBox(
+                                          width: 20,
+                                        ),
+                                      ],
+                                    ),
+                                  ],
                                 ),
                               ),
                             ),
@@ -286,28 +305,53 @@ class _WeatherWindowPageState extends State<WeatherWindowPage> {
                                   ),
                                   const Divider(),
                                   SizedBox(
-                                    height: 125,
-                                    child: ListView.builder(
-                                      scrollDirection: Axis.horizontal,
-                                      itemCount: forecast!.length - 1,
-                                      itemBuilder: (context, index) {
-                                        final foreCast = forecast![index + 1];
-                                        final time = DateTime.parse(
-                                            foreCast["dt_txt"].toString());
-                                        return Card_Widget(
-                                          time: DateFormat("j").format(time),
-                                          icon: foreCast["weather"][0]
-                                                          ["main"] ==
-                                                      "Clouds" ||
-                                                  foreCast["weather"][0]
-                                                          ["main"] ==
-                                                      "Rain"
-                                              ? Icons.cloud
-                                              : Icons.sunny,
-                                          temp: foreCast["main"]["temp"]
-                                              .toString(),
-                                        );
-                                      },
+                                    height: 150,
+                                    child: ScrollConfiguration(
+                                      behavior: ScrollConfiguration.of(context)
+                                          .copyWith(
+                                        dragDevices: {
+                                          PointerDeviceKind.touch,
+                                          PointerDeviceKind.mouse,
+                                        },
+                                      ),
+                                      child: ListView.builder(
+                                        scrollDirection: Axis.horizontal,
+                                        itemCount: date.length,
+                                        itemBuilder: (context, index) {
+                                          DateFormat dateFormat =
+                                              DateFormat("yyyy-MM-dd");
+                                          DateTime dateTime =
+                                              dateFormat.parse(date[index]);
+
+                                          String dayName = DateFormat('EEEE')
+                                              .format(dateTime);
+                                          return GestureDetector(
+                                            onTap: () {
+                                              setState(() {
+                                                selected = index;
+                                              });
+                                            },
+                                            child: CardWidget(
+                                              boxDecoration: selected == index
+                                                  ? mirrorWidget(Colors.black)
+                                                  : null,
+                                              dayName: dayName,
+                                              time:
+                                                  "${date[index].split("-").last}/${date[index].split("-")[1]}",
+                                              icon: weatherTemp[index][0] ==
+                                                      "Clouds"
+                                                  ? Icons.cloud
+                                                  : weatherTemp[index][0] ==
+                                                          "Rain"
+                                                      ? CupertinoIcons
+                                                          .cloud_rain_fill
+                                                      : Icons.sunny,
+                                              temp: weatherTemp[index][1],
+                                              fontSize: 14,
+                                            ),
+                                          );
+                                        },
+                                      ),
                                     ),
                                   ),
                                 ],
@@ -341,28 +385,37 @@ class _WeatherWindowPageState extends State<WeatherWindowPage> {
                                   ),
                                   const Divider(),
                                   SizedBox(
-                                    height: 125,
-                                    child: ListView.builder(
-                                      scrollDirection: Axis.horizontal,
-                                      itemCount: forecast!.length - 1,
-                                      itemBuilder: (context, index) {
-                                        final foreCast = forecast![index + 1];
-                                        final time = DateTime.parse(
-                                            foreCast["dt_txt"].toString());
-                                        return Card_Widget(
-                                          time: DateFormat("j").format(time),
-                                          icon: foreCast["weather"][0]
-                                                          ["main"] ==
-                                                      "Clouds" ||
-                                                  foreCast["weather"][0]
-                                                          ["main"] ==
-                                                      "Rain"
-                                              ? Icons.cloud
-                                              : Icons.sunny,
-                                          temp: foreCast["main"]["temp"]
-                                              .toString(),
-                                        );
-                                      },
+                                    height: 130,
+                                    child: ScrollConfiguration(
+                                      behavior: ScrollConfiguration.of(context)
+                                          .copyWith(
+                                        dragDevices: {
+                                          PointerDeviceKind.touch,
+                                          PointerDeviceKind.mouse,
+                                        },
+                                      ),
+                                      child: ListView.builder(
+                                        scrollDirection: Axis.horizontal,
+                                        itemCount: forecast!.length - 1,
+                                        itemBuilder: (context, index) {
+                                          final foreCast = forecast![index + 1];
+                                          final time = DateTime.parse(
+                                              foreCast["dt_txt"].toString());
+                                          final weather =
+                                              foreCast["weather"][0]["main"];
+                                          return CardWidget(
+                                            time: DateFormat("j").format(time),
+                                            icon: weather == "Clouds"
+                                                ? Icons.cloud
+                                                : weather == "Rain"
+                                                    ? CupertinoIcons
+                                                        .cloud_rain_fill
+                                                    : Icons.sunny,
+                                            temp: foreCast["main"]["temp"]
+                                                .toString(),
+                                          );
+                                        },
+                                      ),
                                     ),
                                   ),
                                 ],
@@ -381,74 +434,28 @@ class _WeatherWindowPageState extends State<WeatherWindowPage> {
 }
 
 class Additional_Widget extends StatelessWidget {
-  const Additional_Widget(
-      {super.key,
-      required this.icon,
-      required this.name,
-      required this.number});
+  const Additional_Widget({
+    super.key,
+    required this.icon,
+    required this.name,
+    required this.number,
+    this.boxDecoration,
+  });
 
   final icon;
   final name;
   final number;
+  final BoxDecoration? boxDecoration;
 
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      child: Padding(
-        padding: const EdgeInsets.all(10.0),
-        child: Column(
-          children: [
-            Icon(
-              icon,
-              size: 30,
-            ),
-            const SizedBox(
-              height: 5,
-            ),
-            Text(
-              name,
-              style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w300),
-            ),
-            const SizedBox(
-              height: 5,
-            ),
-            Text(
-              number,
-              style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class Card_Widget extends StatelessWidget {
-  const Card_Widget(
-      {super.key, required this.time, required this.icon, required this.temp});
-
-  final time;
-  final icon;
-  final temp;
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      width: 100,
-      child: Card(
-        elevation: 4,
+      child: Container(
+        decoration: boxDecoration,
         child: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(10.0),
           child: Column(
             children: [
-              Text(
-                time,
-                style:
-                    const TextStyle(fontWeight: FontWeight.w500, fontSize: 20),
-              ),
-              const SizedBox(
-                height: 5,
-              ),
               Icon(
                 icon,
                 size: 30,
@@ -457,12 +464,88 @@ class Card_Widget extends StatelessWidget {
                 height: 5,
               ),
               Text(
-                temp,
-                style: const TextStyle(fontSize: 15),
+                name,
+                style:
+                    const TextStyle(fontSize: 14, fontWeight: FontWeight.w300),
+              ),
+              const SizedBox(
+                height: 5,
+              ),
+              Text(
+                number,
+                style:
+                    const TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
               ),
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class CardWidget extends StatelessWidget {
+  const CardWidget(
+      {super.key,
+      required this.time,
+      required this.icon,
+      required this.temp,
+      this.dayName,
+      this.fontSize,
+      this.onpress,
+      this.boxDecoration});
+
+  final time;
+  final icon;
+  final temp;
+  final String? dayName;
+  final double? fontSize;
+  final FunctionCall? onpress;
+  final BoxDecoration? boxDecoration;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 120,
+      decoration: boxDecoration,
+      margin: const EdgeInsets.all(5),
+      padding: const EdgeInsets.all(15),
+      child: Column(
+        children: [
+          dayName == null
+              ? Container()
+              : Text(
+                  dayName!,
+                  style: const TextStyle(
+                      fontWeight: FontWeight.w500, fontSize: 13),
+                ),
+          dayName == null
+              ? Container()
+              : const SizedBox(
+                  height: 5,
+                ),
+          Text(
+            time,
+            style: TextStyle(
+                fontWeight: FontWeight.w500,
+                fontSize: fontSize ?? 20,
+                color: fontSize == null ? null : Colors.grey),
+          ),
+          const SizedBox(
+            height: 5,
+          ),
+          Icon(
+            icon,
+            size: 30,
+          ),
+          const SizedBox(
+            height: 5,
+          ),
+          Text(
+            temp,
+            style: const TextStyle(fontSize: 15),
+          ),
+        ],
       ),
     );
   }
