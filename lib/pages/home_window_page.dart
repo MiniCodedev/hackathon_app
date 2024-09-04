@@ -4,7 +4,6 @@ import 'dart:typed_data';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hackathon_app/constant.dart';
-import 'package:hackathon_app/pages/weather_page.dart';
 import 'package:hackathon_app/pages/weather_window_page.dart';
 import 'package:hackathon_app/services/api_services.dart';
 import 'package:image_picker/image_picker.dart';
