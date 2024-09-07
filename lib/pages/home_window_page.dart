@@ -22,7 +22,7 @@ class _HomeWindowPageState extends State<HomeWindowPage> {
   List<List> message = [];
   String usermsg = "";
   bool isfetching = false;
-  ApiServices apiServices = ApiServices();
+  ApiServices apiServices = ApiServices("");
 
   void animateToEnd() {
     scrollController.animateTo(

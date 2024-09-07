@@ -18,6 +18,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    context.read<UserProvider>().getWeatherData();
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: const BottomNaavigationPage(),

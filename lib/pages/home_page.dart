@@ -3,9 +3,11 @@ import 'dart:io';
 import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:hackathon_app/constant.dart';
+import 'package:hackathon_app/helper/user_provider.dart';
 import 'package:hackathon_app/services/api_services.dart';
 import 'package:hackathon_app/widgets/message_tile.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:provider/provider.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -20,7 +22,17 @@ class _HomePageState extends State<HomePage> {
   List<List> message = [];
   String usermsg = "";
   bool isfetching = false;
-  ApiServices apiServices = ApiServices();
+  ApiServices? apiServices;
+  List<String> commands = [
+    "how can we care for the plants in this kind of weather to ensure they stay healthy?",
+    "What is today's weather?",
+    "mention that I should go to the weather screen to change the location.",
+  ];
+  List<String> commandNames = [
+    "Weather-Based Plant Care",
+    "Today's Weather Details",
+    "Change location",
+  ];
 
   void animateToEnd() {
     scrollController.animateTo(
@@ -33,9 +45,9 @@ class _HomePageState extends State<HomePage> {
   Future chatMessage(String usermessage) async {
     String chat;
     if (imageBytes != null) {
-      chat = (await apiServices.apiCallImage(usermessage, imageBytes!));
+      chat = (await apiServices!.apiCallImage(usermessage, imageBytes!));
     } else {
-      chat = (await apiServices.apiCallsendMessage(usermessage));
+      chat = (await apiServices!.apiCallsendMessage(usermessage));
     }
 
     message.add(["GenixAi", chat, "null"]);
@@ -63,6 +75,14 @@ class _HomePageState extends State<HomePage> {
     }
   }
 
+  onCommand(int index_) {
+    isfetching = true;
+    message.add(["user", commandNames[index_], "null"]);
+    animateToEnd();
+    chatMessage(commands[index_]);
+    setState(() {});
+  }
+
   onSubmit() {
     isfetching = true;
     message.add(["user", usermsg, imageBytes ?? "null"]);
@@ -77,6 +97,8 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    apiServices = context.watch<UserProvider>().apiServices;
+
     return Scaffold(
       appBar: AppBar(
         title: const Text("AutoGenixBot"),
@@ -145,6 +167,36 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ),
                       ),
+                SizedBox(
+                  height: 50,
+                  child: ListView.builder(
+                    shrinkWrap: true,
+                    scrollDirection: Axis.horizontal,
+                    itemCount: commands.length,
+                    itemBuilder: (context, index) {
+                      return GestureDetector(
+                        onTap: isfetching
+                            ? null
+                            : () {
+                                onCommand(index);
+                              },
+                        child: Container(
+                          margin: const EdgeInsets.only(right: 5, bottom: 10),
+                          padding: const EdgeInsets.all(10),
+                          decoration: BoxDecoration(
+                              border: Border.all(
+                                color: Colors.black,
+                              ),
+                              borderRadius: BorderRadius.circular(20)),
+                          child: Text(
+                            commandNames[index],
+                            style: const TextStyle(),
+                          ),
+                        ),
+                      );
+                    },
+                  ),
+                ),
                 TextField(
                   controller: userTextField,
                   onChanged: (value) {

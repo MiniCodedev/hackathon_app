@@ -24,7 +24,7 @@ class _WeatherPageState extends State<WeatherPage> {
   int selected = 0;
 
   List<String> date = [];
-  String city_ = "Chennai";
+  String city_ = '';
   TextEditingController userTextField = TextEditingController();
   var weatherData;
 
@@ -57,8 +57,9 @@ class _WeatherPageState extends State<WeatherPage> {
   @override
   void initState() {
     super.initState();
+    final userProvider = context.read<UserProvider>();
+    city_ = userProvider.city;
     userTextField.text = city_;
-    context.read<UserProvider>().getWeatherData(city_);
   }
 
   @override
@@ -294,9 +295,7 @@ class _WeatherPageState extends State<WeatherPage> {
                         ),
                         suffixIcon: IconButton(
                             onPressed: () {
-                              context
-                                  .read<UserProvider>()
-                                  .getWeatherData(city_);
+                              context.read<UserProvider>().changeCity(city_);
                             },
                             icon: Icon(
                               CupertinoIcons.cloud_download,

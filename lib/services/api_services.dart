@@ -9,14 +9,15 @@ class ApiServices {
       "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";
   late ChatSession chat;
   late GenerativeModel model;
-  ApiServices() {
+  ApiServices(String weatherDetails) {
     String apiKey = "AIzaSyBCN7k2i4E9L48vtyRR4MBOMyPds3Sc8cQ";
     final model = GenerativeModel(
       model: 'gemini-1.5-flash',
       apiKey: apiKey,
     );
     this.model = model;
-    ChatSession chat = model.startChat(history: [Content.model(getData())]);
+    ChatSession chat = model.startChat(
+        history: [Content.model(getData()), Content.text(weatherDetails)]);
     this.chat = chat;
   }
 
