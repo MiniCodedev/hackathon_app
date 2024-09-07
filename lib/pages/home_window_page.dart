@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:hackathon_app/constant.dart';
 import 'package:hackathon_app/pages/weather_window_page.dart';
 import 'package:hackathon_app/services/api_services.dart';
+import 'package:hackathon_app/widgets/message_tile.dart';
 import 'package:image_picker/image_picker.dart';
 
 class HomeWindowPage extends StatefulWidget {
@@ -103,10 +104,14 @@ class _HomeWindowPageState extends State<HomeWindowPage> {
               shrinkWrap: true,
               itemCount: message.length,
               itemBuilder: (context, index) {
-                return MessageTile(
-                  name: message[index][0],
-                  message: message[index][1],
-                  image: message[index][2] == "null" ? null : message[index][2],
+                return Align(
+                  alignment: Alignment.topRight,
+                  child: MessageTile(
+                    isUser: message[index][0] == "user",
+                    message: message[index][1],
+                    image:
+                        message[index][2] == "null" ? null : message[index][2],
+                  ),
                 );
               },
             ),
@@ -178,116 +183,116 @@ class _HomeWindowPageState extends State<HomeWindowPage> {
   }
 }
 
-class MessageTile extends StatefulWidget {
-  const MessageTile(
-      {super.key, required this.name, required this.message, this.image});
+// class MessageTile extends StatefulWidget {
+//   const MessageTile(
+//       {super.key, required this.name, required this.message, this.image});
 
-  final String name;
-  final String message;
-  final Uint8List? image;
+//   final String name;
+//   final String message;
+//   final Uint8List? image;
 
-  @override
-  State<MessageTile> createState() => _MessageTileState();
-}
+//   @override
+//   State<MessageTile> createState() => _MessageTileState();
+// }
 
-class _MessageTileState extends State<MessageTile> {
-  List<TextSpan> parseText(String text) {
-    List<TextSpan> spans = [];
-    final RegExp regExp = RegExp(r'\*\*(.*?)\*\*');
-    final matches = regExp.allMatches(text);
+// class _MessageTileState extends State<MessageTile> {
+//   List<TextSpan> parseText(String text) {
+//     List<TextSpan> spans = [];
+//     final RegExp regExp = RegExp(r'\*\*(.*?)\*\*');
+//     final matches = regExp.allMatches(text);
 
-    int start = 0;
-    for (final match in matches) {
-      // Add the text before the bold part
-      if (match.start > start) {
-        spans.add(TextSpan(text: text.substring(start, match.start)));
-      }
+//     int start = 0;
+//     for (final match in matches) {
+//       // Add the text before the bold part
+//       if (match.start > start) {
+//         spans.add(TextSpan(text: text.substring(start, match.start)));
+//       }
 
-      // Add the bold text
-      spans.add(TextSpan(
-        text: match.group(1),
-        style: TextStyle(fontWeight: FontWeight.bold, color: primaryColor),
-      ));
+//       // Add the bold text
+//       spans.add(TextSpan(
+//         text: match.group(1),
+//         style: TextStyle(fontWeight: FontWeight.bold, color: primaryColor),
+//       ));
 
-      start = match.end;
-    }
+//       start = match.end;
+//     }
 
-    // Add the remaining text after the last match
-    if (start < text.length) {
-      spans.add(TextSpan(text: text.substring(start)));
-    }
+//     // Add the remaining text after the last match
+//     if (start < text.length) {
+//       spans.add(TextSpan(text: text.substring(start)));
+//     }
 
-    return spans;
-  }
+//     return spans;
+//   }
 
-  @override
-  Widget build(BuildContext context) {
-    return Card(
-      child: Container(
-        padding: const EdgeInsets.all(10),
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Align(
-              alignment: Alignment.topCenter,
-              child: widget.name == "user"
-                  ? const CircleAvatar(
-                      child: Text(
-                        "U",
-                        style: TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                    )
-                  : const CircleAvatar(
-                      child: Text(
-                        "AI",
-                        style: TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                    ),
-            ),
-            Expanded(
-              child: Column(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(
-                      left: 10,
-                    ),
-                    child: Align(
-                      alignment: Alignment.topLeft,
-                      child: Text(
-                        widget.name == "user" ? "User" : "GenixAi",
-                        style: const TextStyle(
-                            fontSize: 16, fontWeight: FontWeight.bold),
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(
-                      left: 10,
-                    ),
-                    child: Align(
-                      alignment: Alignment.topLeft,
-                      child: RichText(
-                        text: TextSpan(
-                          style: DefaultTextStyle.of(context).style,
-                          children: parseText(widget.message),
-                        ),
-                      ),
-                    ),
-                  ),
-                  widget.image == null
-                      ? Container()
-                      : Padding(
-                          padding: const EdgeInsets.all(10.0),
-                          child: ClipRRect(
-                              borderRadius: BorderRadius.circular(20),
-                              child: Image.memory(widget.image!)),
-                        )
-                ],
-              ),
-            )
-          ],
-        ),
-      ),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return Card(
+//       child: Container(
+//         padding: const EdgeInsets.all(10),
+//         child: Row(
+//           crossAxisAlignment: CrossAxisAlignment.start,
+//           children: [
+//             Align(
+//               alignment: Alignment.topCenter,
+//               child: widget.name == "user"
+//                   ? const CircleAvatar(
+//                       child: Text(
+//                         "U",
+//                         style: TextStyle(fontWeight: FontWeight.bold),
+//                       ),
+//                     )
+//                   : const CircleAvatar(
+//                       child: Text(
+//                         "AI",
+//                         style: TextStyle(fontWeight: FontWeight.bold),
+//                       ),
+//                     ),
+//             ),
+//             Expanded(
+//               child: Column(
+//                 children: [
+//                   Padding(
+//                     padding: const EdgeInsets.only(
+//                       left: 10,
+//                     ),
+//                     child: Align(
+//                       alignment: Alignment.topLeft,
+//                       child: Text(
+//                         widget.name == "user" ? "User" : "GenixAi",
+//                         style: const TextStyle(
+//                             fontSize: 16, fontWeight: FontWeight.bold),
+//                       ),
+//                     ),
+//                   ),
+//                   Padding(
+//                     padding: const EdgeInsets.only(
+//                       left: 10,
+//                     ),
+//                     child: Align(
+//                       alignment: Alignment.topLeft,
+//                       child: RichText(
+//                         text: TextSpan(
+//                           style: DefaultTextStyle.of(context).style,
+//                           children: parseText(widget.message),
+//                         ),
+//                       ),
+//                     ),
+//                   ),
+//                   widget.image == null
+//                       ? Container()
+//                       : Padding(
+//                           padding: const EdgeInsets.all(10.0),
+//                           child: ClipRRect(
+//                               borderRadius: BorderRadius.circular(20),
+//                               child: Image.memory(widget.image!)),
+//                         )
+//                 ],
+//               ),
+//             )
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+// }

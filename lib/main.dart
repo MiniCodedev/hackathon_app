@@ -15,9 +15,11 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: const ResponsiveLayout(),
       theme: ThemeData(
+        appBarTheme: AppBarTheme(
+            foregroundColor: Colors.white, backgroundColor: primaryColor),
         fontFamily: "Poppins",
         colorSchemeSeed: primaryColor,
-        brightness: Brightness.dark,
+        brightness: Brightness.light,
         useMaterial3: true,
       ),
     );

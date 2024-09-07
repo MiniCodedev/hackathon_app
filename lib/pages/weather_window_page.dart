@@ -28,6 +28,7 @@ class _WeatherWindowPageState extends State<WeatherWindowPage> {
   List<List<String>> weatherTemp = [];
   String city_ = "Chennai";
   TextEditingController userTextField = TextEditingController();
+  Color color = primaryColor;
 
   Future getDate(String city) async {
     final url = Uri.parse("http://api.openweathermap.org/data/2.5/forecast");
@@ -238,8 +239,7 @@ class _WeatherWindowPageState extends State<WeatherWindowPage> {
                                           icon: Icons.water_drop_rounded,
                                           name: "Humidity",
                                           number: "$humidity",
-                                          boxDecoration:
-                                              mirrorWidget(Colors.black),
+                                          boxDecoration: mirrorWidget(color),
                                         ),
                                         const SizedBox(
                                           width: 20,
@@ -248,8 +248,7 @@ class _WeatherWindowPageState extends State<WeatherWindowPage> {
                                           icon: Icons.air_rounded,
                                           name: "Wind Speed",
                                           number: "$windSpeed",
-                                          boxDecoration:
-                                              mirrorWidget(Colors.black),
+                                          boxDecoration: mirrorWidget(color),
                                         ),
                                         const SizedBox(
                                           width: 20,
@@ -258,8 +257,7 @@ class _WeatherWindowPageState extends State<WeatherWindowPage> {
                                           icon: Icons.beach_access_rounded,
                                           name: "Pressure",
                                           number: "$pressure",
-                                          boxDecoration:
-                                              mirrorWidget(Colors.black),
+                                          boxDecoration: mirrorWidget(color),
                                         ),
                                         const SizedBox(
                                           width: 20,

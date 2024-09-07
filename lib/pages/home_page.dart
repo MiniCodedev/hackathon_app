@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:hackathon_app/constant.dart';
 import 'package:hackathon_app/pages/weather_page.dart';
 import 'package:hackathon_app/services/api_services.dart';
+import 'package:hackathon_app/widgets/message_tile.dart';
 import 'package:image_picker/image_picker.dart';
 
 class HomePage extends StatefulWidget {
@@ -98,15 +99,44 @@ class _HomePageState extends State<HomePage> {
         children: [
           Expanded(
             child: ListView.builder(
-              padding: const EdgeInsets.all(5),
+              padding: const EdgeInsets.all(10),
               controller: scrollController,
               shrinkWrap: true,
               itemCount: message.length,
               itemBuilder: (context, index) {
-                return MessageTile(
-                  name: message[index][0],
-                  message: message[index][1],
-                  image: message[index][2] == "null" ? null : message[index][2],
+                return Column(
+                  children: [
+                    message[index][2] == "null"
+                        ? Container()
+                        : Align(
+                            alignment: message[index][0] == "user"
+                                ? Alignment.topRight
+                                : Alignment.topLeft,
+                            child: Container(
+                              padding: const EdgeInsets.all(5),
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(10),
+                                child: Image.memory(
+                                  message[index][2],
+                                  fit: BoxFit.cover,
+                                  height: 200,
+                                ),
+                              ),
+                            ),
+                          ),
+                    Align(
+                      alignment: message[index][0] == "user"
+                          ? Alignment.topRight
+                          : Alignment.topLeft,
+                      child: MessageTile(
+                        isUser: message[index][0] == "user",
+                        message: message[index][1],
+                        image: message[index][2] == "null"
+                            ? null
+                            : message[index][2],
+                      ),
+                    ),
+                  ],
                 );
               },
             ),
@@ -158,7 +188,11 @@ class _HomePageState extends State<HomePage> {
                                       },
                             icon: Icon(
                               Icons.send_rounded,
-                              color: isfetching ? Colors.grey[600] : null,
+                              color: usermsg.isEmpty
+                                  ? Colors.grey
+                                  : !isfetching
+                                      ? primaryColor
+                                      : Colors.grey,
                             ),
                           ),
                         ],
@@ -173,120 +207,6 @@ class _HomePageState extends State<HomePage> {
             ),
           )
         ],
-      ),
-    );
-  }
-}
-
-class MessageTile extends StatefulWidget {
-  const MessageTile(
-      {super.key, required this.name, required this.message, this.image});
-
-  final String name;
-  final String message;
-  final Uint8List? image;
-
-  @override
-  State<MessageTile> createState() => _MessageTileState();
-}
-
-class _MessageTileState extends State<MessageTile> {
-  List<TextSpan> parseText(String text) {
-    List<TextSpan> spans = [];
-    final RegExp regExp = RegExp(r'\*\*(.*?)\*\*');
-    final matches = regExp.allMatches(text);
-
-    int start = 0;
-    for (final match in matches) {
-      // Add the text before the bold part
-      if (match.start > start) {
-        spans.add(TextSpan(text: text.substring(start, match.start)));
-      }
-
-      // Add the bold text
-      spans.add(TextSpan(
-        text: match.group(1),
-        style: TextStyle(fontWeight: FontWeight.bold, color: primaryColor),
-      ));
-
-      start = match.end;
-    }
-
-    // Add the remaining text after the last match
-    if (start < text.length) {
-      spans.add(TextSpan(text: text.substring(start)));
-    }
-
-    return spans;
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Card(
-      child: Container(
-        padding: const EdgeInsets.all(10),
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Align(
-              alignment: Alignment.topCenter,
-              child: widget.name == "user"
-                  ? const CircleAvatar(
-                      child: Text(
-                        "U",
-                        style: TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                    )
-                  : const CircleAvatar(
-                      child: Text(
-                        "AI",
-                        style: TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                    ),
-            ),
-            Expanded(
-              child: Column(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(
-                      left: 10,
-                    ),
-                    child: Align(
-                      alignment: Alignment.topLeft,
-                      child: Text(
-                        widget.name == "user" ? "User" : "GenixAi",
-                        style: const TextStyle(
-                            fontSize: 16, fontWeight: FontWeight.bold),
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(
-                      left: 10,
-                    ),
-                    child: Align(
-                      alignment: Alignment.topLeft,
-                      child: RichText(
-                        text: TextSpan(
-                          style: DefaultTextStyle.of(context).style,
-                          children: parseText(widget.message),
-                        ),
-                      ),
-                    ),
-                  ),
-                  widget.image == null
-                      ? Container()
-                      : Padding(
-                          padding: const EdgeInsets.all(10.0),
-                          child: ClipRRect(
-                              borderRadius: BorderRadius.circular(20),
-                              child: Image.memory(widget.image!)),
-                        )
-                ],
-              ),
-            )
-          ],
-        ),
       ),
     );
   }

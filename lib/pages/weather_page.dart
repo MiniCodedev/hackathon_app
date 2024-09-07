@@ -92,7 +92,6 @@ class _WeatherPageState extends State<WeatherPage> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     getDate(city_).then(
       (value) {
@@ -135,11 +134,15 @@ class _WeatherPageState extends State<WeatherPage> {
                   Padding(
                     padding: const EdgeInsets.all(10),
                     child: SizedBox(
-                      height: 50,
+                      height: 65,
                       child: ListView.builder(
                         itemCount: date.length,
                         scrollDirection: Axis.horizontal,
                         itemBuilder: (context, index) {
+                          DateFormat dateFormat = DateFormat("yyyy-MM-dd");
+                          DateTime dateTime = dateFormat.parse(date[index]);
+
+                          String dayName = DateFormat('EEEE').format(dateTime);
                           return GestureDetector(
                             onTap: () {
                               setState(() {
@@ -147,14 +150,27 @@ class _WeatherPageState extends State<WeatherPage> {
                               });
                             },
                             child: Card(
-                              color:
-                                  selected == index ? Colors.cyan[800] : null,
+                              color: selected == index ? primaryColor : null,
                               child: Padding(
                                 padding: const EdgeInsets.all(10),
-                                child: Text(
-                                  date[index],
-                                  style: const TextStyle(
-                                      fontWeight: FontWeight.w600),
+                                child: Column(
+                                  children: [
+                                    Text(dayName,
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.w600,
+                                            color: selected == index
+                                                ? Colors.white
+                                                : null)),
+                                    Text(
+                                      "${date[index].split("-").last}/${date[index].split("-")[1]}",
+                                      style: TextStyle(
+                                          fontSize: 12,
+                                          fontWeight: FontWeight.w300,
+                                          color: selected == index
+                                              ? Colors.white
+                                              : Colors.grey[500]),
+                                    ),
+                                  ],
                                 ),
                               ),
                             ),
@@ -220,6 +236,7 @@ class _WeatherPageState extends State<WeatherPage> {
                                                     ? CupertinoIcons
                                                         .cloud_rain_fill
                                                     : Icons.sunny,
+                                            color: primaryColor,
                                             size: 64,
                                           ),
                                           const SizedBox(
@@ -312,13 +329,18 @@ class _WeatherPageState extends State<WeatherPage> {
                         city_ = value;
                       },
                       decoration: InputDecoration(
-                        prefixIcon: const Icon(CupertinoIcons.map),
+                        prefixIcon: const Icon(
+                          CupertinoIcons.map,
+                        ),
                         suffixIcon: IconButton(
                             onPressed: () async {
                               await getDate(city_);
                               setState(() {});
                             },
-                            icon: const Icon(CupertinoIcons.cloud_download)),
+                            icon: Icon(
+                              CupertinoIcons.cloud_download,
+                              color: primaryColor,
+                            )),
                         hintText: "City name",
                         border: border,
                         focusedBorder: focusborder,
@@ -353,6 +375,7 @@ class Additional_Widget extends StatelessWidget {
             Icon(
               icon,
               size: 30,
+              color: primaryColor,
             ),
             const SizedBox(
               height: 5,
@@ -375,6 +398,7 @@ class Additional_Widget extends StatelessWidget {
   }
 }
 
+// ignore: camel_case_types
 class Card_Widget extends StatelessWidget {
   const Card_Widget(
       {super.key, required this.time, required this.icon, required this.temp});
@@ -404,6 +428,7 @@ class Card_Widget extends StatelessWidget {
               Icon(
                 icon,
                 size: 30,
+                color: primaryColor,
               ),
               const SizedBox(
                 height: 5,
