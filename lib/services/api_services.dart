@@ -16,8 +16,10 @@ class ApiServices {
       apiKey: apiKey,
     );
     this.model = model;
-    ChatSession chat = model.startChat(
-        history: [Content.model(getData()), Content.text(weatherDetails)]);
+    ChatSession chat = model.startChat(history: [
+      Content.model(getData()),
+      Content.model([TextPart(weatherDetails)])
+    ], generationConfig: GenerationConfig(maxOutputTokens: 200));
     this.chat = chat;
   }
 
