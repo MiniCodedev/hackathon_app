@@ -63,12 +63,12 @@ class _MessageTileState extends State<MessageTile> {
   BoxDecoration boxDecoration(bool isUser) {
     return BoxDecoration(
         borderRadius: BorderRadius.only(
-          topRight: const Radius.circular(10),
-          topLeft: const Radius.circular(10),
+          topRight: const Radius.circular(20),
+          topLeft: const Radius.circular(20),
           bottomLeft:
-              isUser ? const Radius.circular(10) : const Radius.circular(2),
+              isUser ? const Radius.circular(20) : const Radius.circular(2),
           bottomRight:
-              isUser ? const Radius.circular(2) : const Radius.circular(10),
+              isUser ? const Radius.circular(2) : const Radius.circular(20),
         ),
         border: Border.all(color: Colors.white.withOpacity(0.13)),
         gradient: LinearGradient(

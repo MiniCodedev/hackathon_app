@@ -1,10 +1,8 @@
 import 'dart:async';
 import 'dart:io';
 import 'dart:typed_data';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hackathon_app/constant.dart';
-import 'package:hackathon_app/pages/weather_page.dart';
 import 'package:hackathon_app/services/api_services.dart';
 import 'package:hackathon_app/widgets/message_tile.dart';
 import 'package:image_picker/image_picker.dart';
@@ -82,18 +80,6 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text("AutoGenixBot"),
-        actions: [
-          IconButton(
-              onPressed: () {
-                Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => const WeatherPage(),
-                ));
-              },
-              icon: const Icon(
-                CupertinoIcons.cloud_sun_rain_fill,
-                size: 30,
-              ))
-        ],
       ),
       body: Column(
         children: [

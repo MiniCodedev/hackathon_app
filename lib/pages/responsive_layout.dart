@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:hackathon_app/pages/home_page.dart';
 import 'package:hackathon_app/pages/home_window_page.dart';
 
-import 'package:hackathon_app/widgets/message_tile.dart';
-
 class ResponsiveLayout extends StatelessWidget {
   const ResponsiveLayout({super.key});
 

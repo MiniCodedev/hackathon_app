@@ -1,10 +1,10 @@
-import 'dart:convert';
 import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:hackathon_app/constant.dart';
-import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
+import 'package:hackathon_app/helper/user_provider.dart';
 import 'package:intl/intl.dart';
+import 'package:provider/provider.dart';
 
 class WeatherPage extends StatefulWidget {
   const WeatherPage({super.key});
@@ -22,69 +22,33 @@ class _WeatherPageState extends State<WeatherPage> {
   String? currentSky;
   List? forecast;
   int selected = 0;
-  String apiKey = 'e114a7a0ae595a3fab28ba629489de90';
+
   List<String> date = [];
   String city_ = "Chennai";
   TextEditingController userTextField = TextEditingController();
+  var weatherData;
 
-  Future getDate(String city) async {
-    final url = Uri.parse("http://api.openweathermap.org/data/2.5/forecast");
-    List<String> date_ = [];
-
-    final params = {
-      'q': city,
-      'appid': apiKey,
-      'units': 'metric',
-    };
-
-    final uri = url.replace(queryParameters: params);
-    final response = await http.get(uri);
-
-    if (response.statusCode == 200) {
-      final data = jsonDecode(response.body);
-      for (var entry in data['list']) {
-        String dtTxt = entry['dt_txt'].toString().split(" ")[0];
-        if (!date_.contains(dtTxt)) {
-          date_.add(dtTxt);
-        }
-      }
-      return date_;
-    } else {
-      return "Error fetching weather data. Please check your API key and city name.";
-    }
-  }
-
-  Future getCurrentWeather(int index, String city) async {
+  Future getCurrentWeather(
+    int index,
+  ) async {
     try {
-      final url = Uri.parse("http://api.openweathermap.org/data/2.5/forecast");
-      final newData = [];
-      final params = {
-        'q': city,
-        'appid': apiKey,
-        'units': 'metric',
-      };
+      List newData = [];
 
-      final uri = url.replace(queryParameters: params);
-      final response = await http.get(uri);
-      final data = jsonDecode(response.body);
-      if (data["cod"] != "200") {
-        throw "Unexpected";
-      }
+      currentTemp = weatherData["list"][index]["main"]["temp"].toString();
+      currentSky = weatherData["list"][index]["weather"][0]["main"].toString();
+      humidity = weatherData["list"][index]["main"]["humidity"].toString();
+      windSpeed = weatherData["list"][index]["wind"]["speed"].toString();
+      pressure = weatherData["list"][index]["main"]["pressure"].toString();
 
-      currentTemp = data["list"][index]["main"]["temp"].toString();
-      currentSky = data["list"][index]["weather"][0]["main"].toString();
-      humidity = data["list"][index]["main"]["humidity"].toString();
-      windSpeed = data["list"][index]["wind"]["speed"].toString();
-      pressure = data["list"][index]["main"]["pressure"].toString();
-      for (var entry in data["list"]) {
-        String dtTxt = date[index];
+      String dtTxt = date[index];
+      print(dtTxt);
+      for (var entry in weatherData["list"]) {
         if (entry["dt_txt"].toString().contains(dtTxt)) {
           newData.add(entry);
         }
       }
       forecast = newData;
-
-      return data;
+      return newData;
     } catch (e) {
       throw e.toString();
     }
@@ -93,19 +57,15 @@ class _WeatherPageState extends State<WeatherPage> {
   @override
   void initState() {
     super.initState();
-    getDate(city_).then(
-      (value) {
-        setState(() {
-          date = value;
-          isloading = false;
-        });
-      },
-    );
     userTextField.text = city_;
+    context.read<UserProvider>().getWeatherData(city_);
   }
 
   @override
   Widget build(BuildContext context) {
+    weatherData = context.watch<UserProvider>().weatherData;
+    date = context.watch<UserProvider>().date ?? [];
+
     final height = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: AppBar(
@@ -123,7 +83,7 @@ class _WeatherPageState extends State<WeatherPage> {
         elevation: 0,
         centerTitle: true,
       ),
-      body: isloading
+      body: weatherData == null
           ? const Center(
               child: CircularProgressIndicator(),
             )
@@ -180,7 +140,7 @@ class _WeatherPageState extends State<WeatherPage> {
                     ),
                   ),
                   FutureBuilder(
-                    future: getCurrentWeather(selected, city_),
+                    future: getCurrentWeather(selected),
                     builder: (context, snapshot) {
                       if (snapshot.connectionState == ConnectionState.waiting) {
                         return Column(
@@ -221,7 +181,7 @@ class _WeatherPageState extends State<WeatherPage> {
                                       child: Column(
                                         children: [
                                           Text(
-                                            "$currentTemp K",
+                                            "$currentTemp °C",
                                             style: const TextStyle(
                                                 fontSize: 32,
                                                 fontWeight: FontWeight.bold),
@@ -333,9 +293,10 @@ class _WeatherPageState extends State<WeatherPage> {
                           CupertinoIcons.map,
                         ),
                         suffixIcon: IconButton(
-                            onPressed: () async {
-                              await getDate(city_);
-                              setState(() {});
+                            onPressed: () {
+                              context
+                                  .read<UserProvider>()
+                                  .getWeatherData(city_);
                             },
                             icon: Icon(
                               CupertinoIcons.cloud_download,
